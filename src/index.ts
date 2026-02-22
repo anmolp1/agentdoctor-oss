@@ -6,7 +6,14 @@ export type { AnalyzeOptions, AnalyzeResult, OutputFormat } from "./pipeline.js"
 
 // Models
 export { Role, ToolCallStatus } from "./models/canonical.js";
-export type { Message, ToolCall, Turn, AgentSession, ToolSchema, AgentLogBundle } from "./models/canonical.js";
+export type {
+  Message,
+  ToolCall,
+  Turn,
+  AgentSession,
+  ToolSchema,
+  AgentLogBundle,
+} from "./models/canonical.js";
 export { totalTurns, totalToolCalls, totalMessages } from "./models/canonical.js";
 
 export { Pathology, Severity } from "./models/findings.js";

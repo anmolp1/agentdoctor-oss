@@ -73,7 +73,7 @@ Prints the overall health score and grade without the full diagnostic breakdown.
 ### Exit Codes
 
 | Code | Meaning                    |
-|------|----------------------------|
+| ---- | -------------------------- |
 | `0`  | Healthy (score >= 80)      |
 | `1`  | Degraded (score 60--79)    |
 | `2`  | Critical (score < 60)      |
@@ -122,11 +122,11 @@ import {
 
 AgentDoctor automatically detects the format of your log files. The following formats are supported:
 
-| Format        | File Extension | Description                                       |
-|---------------|----------------|---------------------------------------------------|
-| LangChain     | `.json`        | LangChain tracer/callback JSON logs               |
-| OpenAI (JSONL)| `.jsonl`       | OpenAI API request/response logs in JSONL format   |
-| Generic JSON  | `.json`        | Any JSON log with message arrays and tool calls    |
+| Format         | File Extension | Description                                      |
+| -------------- | -------------- | ------------------------------------------------ |
+| LangChain      | `.json`        | LangChain tracer/callback JSON logs              |
+| OpenAI (JSONL) | `.jsonl`       | OpenAI API request/response logs in JSONL format |
+| Generic JSON   | `.json`        | Any JSON log with message arrays and tool calls  |
 
 The parser auto-detects the format based on the structure of the log data, so no manual format specification is required.
 
@@ -136,11 +136,11 @@ The parser auto-detects the format based on the structure of the log data, so no
 
 AgentDoctor computes a composite health score from 0 to 100 across three weighted layers:
 
-| Layer                    | Weight | What it measures                                              |
-|--------------------------|--------|---------------------------------------------------------------|
-| **Context Health**       | 0.40   | Token growth rate, context window utilization, instruction share, stale content |
-| **Tool Reliability**     | 0.35   | Tool call success rates, error recovery, thrashing patterns   |
-| **Instruction Coherence**| 0.25   | Instruction drift, contradictions, hallucinated success claims|
+| Layer                     | Weight | What it measures                                                                |
+| ------------------------- | ------ | ------------------------------------------------------------------------------- |
+| **Context Health**        | 0.40   | Token growth rate, context window utilization, instruction share, stale content |
+| **Tool Reliability**      | 0.35   | Tool call success rates, error recovery, thrashing patterns                     |
+| **Instruction Coherence** | 0.25   | Instruction drift, contradictions, hallucinated success claims                  |
 
 Each layer starts at 100 and is penalized based on detected pathologies:
 
@@ -150,7 +150,7 @@ Each layer starts at 100 and is penalized based on detected pathologies:
 The overall score is the weighted sum of the three layer scores. The grade mapping:
 
 | Grade | Score Range |
-|-------|-------------|
+| ----- | ----------- |
 | A     | 90--100     |
 | B     | 80--89      |
 | C     | 70--79      |
@@ -219,8 +219,14 @@ AgentDoctor works out of the box with sensible defaults. To customize thresholds
   },
   "hallucinatedSuccess": {
     "errorAcknowledgmentKeywords": [
-      "failed", "error", "couldn't", "unable",
-      "issue", "problem", "sorry", "unfortunately"
+      "failed",
+      "error",
+      "couldn't",
+      "unable",
+      "issue",
+      "problem",
+      "sorry",
+      "unfortunately"
     ]
   },
   "silentDegradation": {

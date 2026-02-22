@@ -120,7 +120,8 @@ export function computeContextHealth(
 
 function generateSummary(score: number, flags: string[]): string {
   if (score >= 90) return "Context management is healthy. Instructions are well-preserved.";
-  if (score >= 70) return "Context health is acceptable but could be improved. " + flags.join(". ") + ".";
+  if (score >= 70)
+    return "Context health is acceptable but could be improved. " + flags.join(". ") + ".";
   if (score >= 50) return "Context health is concerning. " + flags.join(". ") + ".";
   return "Context health is critical. " + flags.join(". ") + ". Immediate attention needed.";
 }

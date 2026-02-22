@@ -63,10 +63,8 @@ export function computeToolReliability(
 
   const flags: string[] = [];
   if (successScore < 50) flags.push(`Low tool success rate (${Math.round(successRate * 100)}%)`);
-  if (callsPerTurnScore < 50)
-    flags.push(`High calls-per-turn (${callsPerTurn.toFixed(1)} avg)`);
-  if (thrashingScore < 50)
-    flags.push(`${thrashingEpisodes} tool thrashing episode(s) detected`);
+  if (callsPerTurnScore < 50) flags.push(`High calls-per-turn (${callsPerTurn.toFixed(1)} avg)`);
+  if (thrashingScore < 50) flags.push(`${thrashingEpisodes} tool thrashing episode(s) detected`);
 
   return {
     name: "Tool Reliability",

@@ -17,8 +17,16 @@ describe("SilentDegradationDetector", () => {
       makeTurn({
         turnIndex: 0,
         toolCalls: [
-          makeToolCall({ toolName: "search", status: ToolCallStatus.Success, toolInput: { q: "a" } }),
-          makeToolCall({ toolName: "read_file", status: ToolCallStatus.Success, toolInput: { p: "x" } }),
+          makeToolCall({
+            toolName: "search",
+            status: ToolCallStatus.Success,
+            toolInput: { q: "a" },
+          }),
+          makeToolCall({
+            toolName: "read_file",
+            status: ToolCallStatus.Success,
+            toolInput: { p: "x" },
+          }),
         ],
         messages: [
           makeMessage({ role: Role.User, content: "Do task 1." }),
@@ -28,7 +36,11 @@ describe("SilentDegradationDetector", () => {
       makeTurn({
         turnIndex: 1,
         toolCalls: [
-          makeToolCall({ toolName: "search", status: ToolCallStatus.Success, toolInput: { q: "b" } }),
+          makeToolCall({
+            toolName: "search",
+            status: ToolCallStatus.Success,
+            toolInput: { q: "b" },
+          }),
         ],
         messages: [
           makeMessage({ role: Role.User, content: "Do task 2." }),
@@ -38,7 +50,11 @@ describe("SilentDegradationDetector", () => {
       makeTurn({
         turnIndex: 2,
         toolCalls: [
-          makeToolCall({ toolName: "write_file", status: ToolCallStatus.Success, toolInput: { p: "y" } }),
+          makeToolCall({
+            toolName: "write_file",
+            status: ToolCallStatus.Success,
+            toolInput: { p: "y" },
+          }),
         ],
         messages: [
           makeMessage({ role: Role.User, content: "Do task 3." }),
@@ -49,7 +65,11 @@ describe("SilentDegradationDetector", () => {
       makeTurn({
         turnIndex: 3,
         toolCalls: [
-          makeToolCall({ toolName: "search", status: ToolCallStatus.Success, toolInput: { q: "c" } }),
+          makeToolCall({
+            toolName: "search",
+            status: ToolCallStatus.Success,
+            toolInput: { q: "c" },
+          }),
         ],
         messages: [
           makeMessage({ role: Role.User, content: "Do task 4." }),
@@ -69,7 +89,11 @@ describe("SilentDegradationDetector", () => {
       makeTurn({
         turnIndex: 5,
         toolCalls: [
-          makeToolCall({ toolName: "read_file", status: ToolCallStatus.Error, toolInput: { p: "z" } }),
+          makeToolCall({
+            toolName: "read_file",
+            status: ToolCallStatus.Error,
+            toolInput: { p: "z" },
+          }),
         ],
         messages: [
           makeMessage({ role: Role.User, content: "Do task 6." }),
@@ -91,7 +115,11 @@ describe("SilentDegradationDetector", () => {
       makeTurn({
         turnIndex: 7,
         toolCalls: [
-          makeToolCall({ toolName: "write_file", status: ToolCallStatus.Error, toolInput: { p: "w" } }),
+          makeToolCall({
+            toolName: "write_file",
+            status: ToolCallStatus.Error,
+            toolInput: { p: "w" },
+          }),
         ],
         messages: [
           makeMessage({ role: Role.User, content: "Do task 8." }),
@@ -140,10 +168,7 @@ describe("SilentDegradationDetector", () => {
     const bundle = makeBundle([
       makeSession({
         sessionId: "compound-session",
-        turns: [
-          makeTurn({ turnIndex: 0 }),
-          makeTurn({ turnIndex: 1 }),
-        ],
+        turns: [makeTurn({ turnIndex: 0 }), makeTurn({ turnIndex: 1 })],
         systemPrompt: "Test.",
         toolSchemas: [],
       }),
@@ -186,8 +211,7 @@ describe("SilentDegradationDetector", () => {
 
     const compoundFinding = findings.find(
       (f) =>
-        f.pathology === Pathology.SilentDegradation &&
-        f.title.includes("Compounding pathologies"),
+        f.pathology === Pathology.SilentDegradation && f.title.includes("Compounding pathologies"),
     );
     expect(compoundFinding).toBeDefined();
     expect(compoundFinding!.severity).toBe(Severity.Info);

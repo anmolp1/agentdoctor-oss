@@ -1,7 +1,5 @@
 import { execSync } from "node:child_process";
 import * as path from "node:path";
-import * as fs from "node:fs";
-import * as os from "node:os";
 
 const CLI_PATH = path.resolve(__dirname, "../../src/cli/index.ts");
 const FIXTURES_DIR = path.resolve(__dirname, "../fixtures/logs");
@@ -45,13 +43,8 @@ describe("CLI integration", () => {
 
     it("loads custom thresholds with --config", () => {
       const fixture = path.join(FIXTURES_DIR, "generic/mixed-pathologies.json");
-      const configPath = path.resolve(
-        __dirname,
-        "../fixtures/configs/strict.json",
-      );
-      const { stdout, exitCode } = runCli(
-        `check ${fixture} --config ${configPath} --format json`,
-      );
+      const configPath = path.resolve(__dirname, "../fixtures/configs/strict.json");
+      const { stdout, exitCode } = runCli(`check ${fixture} --config ${configPath} --format json`);
 
       // The command should execute without a parse/config error (exit code 3)
       expect(exitCode).not.toBe(3);
@@ -105,9 +98,7 @@ describe("CLI integration", () => {
 
   describe("error handling", () => {
     it("includes helpful message on parse failure with non-existent file", () => {
-      const { stdout, exitCode } = runCli(
-        "check /tmp/does-not-exist-agentdoctor-test.json",
-      );
+      const { exitCode } = runCli("check /tmp/does-not-exist-agentdoctor-test.json");
 
       // Should exit with error code (3 for general errors)
       expect(exitCode).toBe(3);

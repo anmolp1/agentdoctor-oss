@@ -133,15 +133,9 @@ describe("detectAndParse", () => {
       timestamp: "2026-01-01",
     });
 
-    expect(() => detectAndParse("mystery.json", content)).toThrow(
-      /Could not parse mystery\.json/,
-    );
-    expect(() => detectAndParse("mystery.json", content)).toThrow(
-      /Tried:/,
-    );
-    expect(() => detectAndParse("mystery.json", content)).toThrow(
-      /supported formats/,
-    );
+    expect(() => detectAndParse("mystery.json", content)).toThrow(/Could not parse mystery\.json/);
+    expect(() => detectAndParse("mystery.json", content)).toThrow(/Tried:/);
+    expect(() => detectAndParse("mystery.json", content)).toThrow(/supported formats/);
   });
 
   it("error message lists all tried parsers", () => {

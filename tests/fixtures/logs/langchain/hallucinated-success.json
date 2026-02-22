@@ -20,9 +20,7 @@
       },
       "start_time": "2026-02-22T10:00:00Z",
       "end_time": "2026-02-22T10:30:00Z",
-      "tags": [
-        "agent"
-      ]
+      "tags": ["agent"]
     },
     {
       "run_id": "llm-hallucinated-success-001-0",

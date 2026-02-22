@@ -1,9 +1,5 @@
-import * as fs from "node:fs";
-import * as path from "node:path";
 import { OpenAIParser } from "../../../src/parsers/openai.js";
 import { Role, ToolCallStatus } from "../../../src/models/canonical.js";
-
-const FIXTURES_DIR = path.join(__dirname, "../../fixtures/logs");
 
 /**
  * Build a multi-line JSONL string in the direct format (no request/response wrapper)
@@ -29,9 +25,30 @@ function buildOpenAIJSONL(count: number): string {
         { role: "user", content: `User message for turn ${i}: Can you help me with task ${i}?` },
       ],
       tools: [
-        { type: "function", function: { name: "search", description: "Search for information", parameters: { type: "object", properties: {} } } },
-        { type: "function", function: { name: "read_file", description: "Read a file", parameters: { type: "object", properties: {} } } },
-        { type: "function", function: { name: "write_file", description: "Write a file", parameters: { type: "object", properties: {} } } },
+        {
+          type: "function",
+          function: {
+            name: "search",
+            description: "Search for information",
+            parameters: { type: "object", properties: {} },
+          },
+        },
+        {
+          type: "function",
+          function: {
+            name: "read_file",
+            description: "Read a file",
+            parameters: { type: "object", properties: {} },
+          },
+        },
+        {
+          type: "function",
+          function: {
+            name: "write_file",
+            description: "Write a file",
+            parameters: { type: "object", properties: {} },
+          },
+        },
       ],
       choices: [
         {
@@ -278,9 +295,7 @@ describe("OpenAIParser", () => {
     });
 
     it("throws on malformed JSON", () => {
-      expect(() => parser.parse("test.json", "not valid json{{{")).toThrow(
-        "Malformed JSON",
-      );
+      expect(() => parser.parse("test.json", "not valid json{{{")).toThrow("Malformed JSON");
     });
 
     it("includes session metadata with source file", () => {

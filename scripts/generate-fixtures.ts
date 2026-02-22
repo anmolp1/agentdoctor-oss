@@ -67,16 +67,28 @@ function buildHealthySession(numTurns: number): AgentSession {
 
   // Varied, non-repeating tool usage pattern (avoids oscillation detection)
   const toolSequence = [
-    "search", "search", "read_file", "search", "write_file",
-    "read_file", "search", "write_file", "search", "search",
-    "read_file", "write_file", "read_file", "search", "read_file",
+    "search",
+    "search",
+    "read_file",
+    "search",
+    "write_file",
+    "read_file",
+    "search",
+    "write_file",
+    "search",
+    "search",
+    "read_file",
+    "write_file",
+    "read_file",
+    "search",
+    "read_file",
   ];
 
   for (let i = 0; i < numTurns; i++) {
     // Healthy: slow growth ~50 tokens/turn, with periodic reductions (summarization)
-    contextTokens += 40 + (i * 7) % 30;
+    contextTokens += 40 + ((i * 7) % 30);
     // Periodic reduction simulating context management (every 3rd turn)
-    if (i % 3 === 2) contextTokens -= 80 + (i * 11) % 60;
+    if (i % 3 === 2) contextTokens -= 80 + ((i * 11) % 60);
 
     const toolName = toolSequence[i % toolSequence.length]!;
     turns.push({
@@ -93,7 +105,7 @@ function buildHealthySession(numTurns: number): AgentSession {
           toolInput: { query: `task ${i} data`, path: `/file${i}.txt` },
           toolOutput: `Result for task ${i}: data processed successfully.`,
           status: "success",
-          latencyMs: 150 + (i * 37) % 200,
+          latencyMs: 150 + ((i * 37) % 200),
           retryCount: 0,
         },
       ],
@@ -400,7 +412,10 @@ function buildRecoveryBlindnessSession(): AgentSession {
 
   turns.push({
     messages: [
-      { role: "assistant", content: "I encountered an error deploying. Let me try a different approach." },
+      {
+        role: "assistant",
+        content: "I encountered an error deploying. Let me try a different approach.",
+      },
     ],
     toolCalls: [],
     turnIndex: 4,
@@ -430,7 +445,8 @@ function buildRecoveryBlindnessSession(): AgentSession {
     messages: [
       {
         role: "assistant",
-        content: "Unfortunately, the API health check timed out. This could indicate the service is down.",
+        content:
+          "Unfortunately, the API health check timed out. This could indicate the service is down.",
       },
     ],
     toolCalls: [],
@@ -548,7 +564,8 @@ function buildHallucinatedSuccessSession(): AgentSession {
       { role: "user", content: "List all products." },
       {
         role: "assistant",
-        content: "Here are all the products: Widget A, Widget B, Widget C. That covers our complete catalog.",
+        content:
+          "Here are all the products: Widget A, Widget B, Widget C. That covers our complete catalog.",
       },
     ],
     toolCalls: [
@@ -646,7 +663,12 @@ function buildSilentDegradationSession(): AgentSession[] {
       turns.push({
         messages: [
           { role: "user", content: `Process batch ${i}` },
-          { role: "assistant", content: isError ? "I encountered an error processing this batch." : `Batch ${i} processed.` },
+          {
+            role: "assistant",
+            content: isError
+              ? "I encountered an error processing this batch."
+              : `Batch ${i} processed.`,
+          },
         ],
         toolCalls: toolCallsForTurn,
         turnIndex: i,
@@ -806,7 +828,7 @@ function toLangChainFormat(session: AgentSession): object {
         name: tc.toolName,
         inputs: tc.toolInput,
         outputs: tc.toolOutput ? { output: tc.toolOutput } : null,
-        error: tc.status === "error" ? tc.errorMessage ?? "Tool error" : null,
+        error: tc.status === "error" ? (tc.errorMessage ?? "Tool error") : null,
         start_time: "2026-02-22T10:00:01Z",
         end_time: "2026-02-22T10:00:02Z",
       });
@@ -964,10 +986,7 @@ async function main(): Promise<void> {
   }
 
   // OpenAI fixtures (2)
-  fs.writeFileSync(
-    path.join(openaiDir, "healthy-session.jsonl"),
-    toOpenAIFormat(healthySession),
-  );
+  fs.writeFileSync(path.join(openaiDir, "healthy-session.jsonl"), toOpenAIFormat(healthySession));
   // eslint-disable-next-line no-console
   console.log("  Generated: openai/healthy-session.jsonl");
 
@@ -1041,7 +1060,9 @@ async function main(): Promise<void> {
   );
 
   // eslint-disable-next-line no-console
-  console.log("\nFixture generation complete! 12 fixture files + 2 configs + 2 examples generated.");
+  console.log(
+    "\nFixture generation complete! 12 fixture files + 2 configs + 2 examples generated.",
+  );
 }
 
 main().catch((err) => {

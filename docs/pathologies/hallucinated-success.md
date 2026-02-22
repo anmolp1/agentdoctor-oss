@@ -41,8 +41,16 @@ but the agent treats them as complete.
   "hallucinatedSuccess": {
     "emptyOutputMinLength": 5,
     "errorKeywords": [
-      "error", "fail", "exception", "denied", "timeout",
-      "refused", "not found", "unauthorized", "forbidden", "invalid"
+      "error",
+      "fail",
+      "exception",
+      "denied",
+      "timeout",
+      "refused",
+      "not found",
+      "unauthorized",
+      "forbidden",
+      "invalid"
     ]
   }
 }

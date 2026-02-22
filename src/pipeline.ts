@@ -92,12 +92,7 @@ export async function analyze(options: AnalyzeOptions): Promise<AnalyzeResult> {
   const healthScore = computeHealthScore(bundle, diagnostics, config);
 
   // Step 5: Generate report
-  const report = generateReport(
-    diagnostics,
-    healthScore,
-    options.logFiles,
-    format,
-  );
+  const report = generateReport(diagnostics, healthScore, options.logFiles, format);
 
   // Step 6: Write output if path specified
   if (options.outputPath) {

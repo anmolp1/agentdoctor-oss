@@ -2,7 +2,6 @@ import { ToolThrashingDetector } from "../../../src/detectors/tool-thrashing.js"
 import { getDefaultConfig } from "../../../src/models/config.js";
 import { makeSession, makeBundle, makeTurn, makeToolCall } from "../../helpers.js";
 import { Pathology, Severity } from "../../../src/models/findings.js";
-import { ToolCallStatus } from "../../../src/models/canonical.js";
 
 describe("ToolThrashingDetector", () => {
   const detector = new ToolThrashingDetector();
@@ -124,9 +123,7 @@ describe("ToolThrashingDetector", () => {
       }),
       makeTurn({
         turnIndex: 2,
-        toolCalls: [
-          makeToolCall({ toolName: "search", toolInput: { query: "beta" } }),
-        ],
+        toolCalls: [makeToolCall({ toolName: "search", toolInput: { query: "beta" } })],
       }),
     ];
 

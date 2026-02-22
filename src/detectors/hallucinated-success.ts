@@ -33,10 +33,7 @@ export class HallucinatedSuccessDetector implements BaseDetector {
           const call = turn.toolCalls[ci]!;
 
           // Rule 1: Status/output mismatch
-          if (
-            call.status === ToolCallStatus.Error ||
-            call.status === ToolCallStatus.Timeout
-          ) {
+          if (call.status === ToolCallStatus.Error || call.status === ToolCallStatus.Timeout) {
             const nextAssistantMsg = this.getNextAssistantMessage(session.turns, ti, ci);
             if (
               nextAssistantMsg &&
@@ -73,7 +70,10 @@ export class HallucinatedSuccessDetector implements BaseDetector {
           }
 
           // Rule 2: Empty output treated as success
-          if (this.isEmptyOrErrorOutput(call.toolOutput) && call.status === ToolCallStatus.Success) {
+          if (
+            this.isEmptyOrErrorOutput(call.toolOutput) &&
+            call.status === ToolCallStatus.Success
+          ) {
             const nextAssistantMsg = this.getNextAssistantMessage(session.turns, ti, ci);
             if (nextAssistantMsg && this.containsSpecificClaims(nextAssistantMsg)) {
               findings.push({
@@ -105,10 +105,7 @@ export class HallucinatedSuccessDetector implements BaseDetector {
           }
 
           // Rule 3: Partial result acceptance
-          if (
-            call.toolOutput &&
-            containsKeywords(call.toolOutput, TRUNCATION_INDICATORS)
-          ) {
+          if (call.toolOutput && containsKeywords(call.toolOutput, TRUNCATION_INDICATORS)) {
             const nextAssistantMsg = this.getNextAssistantMessage(session.turns, ti, ci);
             if (
               nextAssistantMsg &&
@@ -149,7 +146,7 @@ export class HallucinatedSuccessDetector implements BaseDetector {
   private getNextAssistantMessage(
     turns: readonly Turn[],
     turnIdx: number,
-    callIdx: number,
+    _callIdx: number,
   ): string | null {
     const turn = turns[turnIdx]!;
 
@@ -182,11 +179,7 @@ export class HallucinatedSuccessDetector implements BaseDetector {
     // Check if output is an error JSON
     try {
       const parsed = JSON.parse(trimmed);
-      if (
-        parsed &&
-        typeof parsed === "object" &&
-        ("error" in parsed || "Error" in parsed)
-      ) {
+      if (parsed && typeof parsed === "object" && ("error" in parsed || "Error" in parsed)) {
         return true;
       }
     } catch {

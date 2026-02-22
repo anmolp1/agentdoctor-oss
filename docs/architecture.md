@@ -14,11 +14,11 @@ Log Files → Parse → Detect → Score → Report
 The parser layer auto-detects the log format and converts it into a canonical
 `AgentLogBundle` containing one or more `AgentSession` objects.
 
-| Parser    | Format                        | Detection                          |
-| --------- | ----------------------------- | ---------------------------------- |
-| LangChain | JSON with run_id/parent_run_id| Looks for `run_id` + `type` fields |
-| OpenAI    | JSONL or JSON array           | Looks for `model` + `choices`/`usage` |
-| Generic   | JSON with sessions/turns      | Looks for `sessions`/`messages`/`events`/`turns` |
+| Parser    | Format                         | Detection                                        |
+| --------- | ------------------------------ | ------------------------------------------------ |
+| LangChain | JSON with run_id/parent_run_id | Looks for `run_id` + `type` fields               |
+| OpenAI    | JSONL or JSON array            | Looks for `model` + `choices`/`usage`            |
+| Generic   | JSON with sessions/turns       | Looks for `sessions`/`messages`/`events`/`turns` |
 
 The parser registry tries each parser in order. The first one whose `canParse`
 method returns `true` is used.
@@ -41,11 +41,11 @@ Warning, Info) and supporting evidence.
 
 Three scoring layers compute independent scores (0-100):
 
-| Layer                  | Weight | Components                                      |
-| ---------------------- | ------ | ----------------------------------------------- |
-| Context Health         | 0.40   | Growth management, instruction share, stale content |
-| Tool Reliability       | 0.35   | Success rate, calls per turn, thrashing score    |
-| Instruction Coherence  | 0.25   | Prompt-schema alignment, consistency, prompt presence |
+| Layer                 | Weight | Components                                            |
+| --------------------- | ------ | ----------------------------------------------------- |
+| Context Health        | 0.40   | Growth management, instruction share, stale content   |
+| Tool Reliability      | 0.35   | Success rate, calls per turn, thrashing score         |
+| Instruction Coherence | 0.25   | Prompt-schema alignment, consistency, prompt presence |
 
 The composite score is a weighted average, then penalised by findings:
 

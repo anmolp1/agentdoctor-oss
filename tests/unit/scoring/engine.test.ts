@@ -1,6 +1,11 @@
 import { computeHealthScore } from "../../../src/scoring/engine.js";
 import { getDefaultConfig } from "../../../src/models/config.js";
-import { makeBundle, makeHealthySession, makeDiagnosticResult, makeFinding } from "../../helpers.js";
+import {
+  makeBundle,
+  makeHealthySession,
+  makeDiagnosticResult,
+  makeFinding,
+} from "../../helpers.js";
 import { Pathology, Severity } from "../../../src/models/findings.js";
 
 describe("computeHealthScore", () => {
@@ -137,12 +142,8 @@ describe("computeHealthScore", () => {
     ]);
 
     const findings = [
-      ...Array.from({ length: 5 }, () =>
-        makeFinding({ severity: Severity.Critical }),
-      ),
-      ...Array.from({ length: 5 }, () =>
-        makeFinding({ severity: Severity.Warning }),
-      ),
+      ...Array.from({ length: 5 }, () => makeFinding({ severity: Severity.Critical })),
+      ...Array.from({ length: 5 }, () => makeFinding({ severity: Severity.Warning })),
     ];
 
     const diagnostics = makeDiagnosticResult(findings);
@@ -192,9 +193,7 @@ describe("computeHealthScore", () => {
   it("is deterministic (run twice, same result)", () => {
     const session = makeHealthySession(10);
     const bundle = makeBundle([session]);
-    const diagnostics = makeDiagnosticResult([
-      makeFinding({ severity: Severity.Warning }),
-    ]);
+    const diagnostics = makeDiagnosticResult([makeFinding({ severity: Severity.Warning })]);
 
     const result1 = computeHealthScore(bundle, diagnostics, config);
     const result2 = computeHealthScore(bundle, diagnostics, config);
@@ -218,10 +217,7 @@ describe("computeHealthScore", () => {
 
     // Should always include the static unassessed layers
     expect(result.unassessedLayers).toEqual(
-      expect.arrayContaining([
-        "Recovery Robustness",
-        "Output Quality Baselines",
-      ]),
+      expect.arrayContaining(["Recovery Robustness", "Output Quality Baselines"]),
     );
   });
 
