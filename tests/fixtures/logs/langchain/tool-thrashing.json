@@ -1,0 +1,722 @@
+{
+  "runs": [
+    {
+      "run_id": "chain-tool-thrashing-001",
+      "parent_run_id": null,
+      "type": "chain",
+      "name": "AgentExecutor",
+      "inputs": {
+        "input": "Task 0: Find information about topic 0.",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are an assistant that helps users find and process information. Use `search` to find info, `read_file` to read files, `write_file` to write files.",
+            "type": "system"
+          }
+        ]
+      },
+      "outputs": {
+        "output": "Processing..."
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:30:00Z",
+      "tags": [
+        "agent"
+      ]
+    },
+    {
+      "run_id": "llm-tool-thrashing-001-0",
+      "parent_run_id": "chain-tool-thrashing-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Task 0: Find information about topic 0."
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "I'll search for topic 0."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 2310,
+          "completion_tokens": 200,
+          "total_tokens": 3300
+        }
+      }
+    },
+    {
+      "run_id": "tool-tool-thrashing-001-0-0",
+      "parent_run_id": "llm-tool-thrashing-001-0",
+      "type": "tool",
+      "name": "search",
+      "inputs": {
+        "query": "topic 0"
+      },
+      "outputs": {
+        "output": "Results for topic 0"
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-tool-thrashing-001-1",
+      "parent_run_id": "chain-tool-thrashing-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Task 1: Find information about topic 1."
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "I'll search for topic 1."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 2520,
+          "completion_tokens": 200,
+          "total_tokens": 3600
+        }
+      }
+    },
+    {
+      "run_id": "tool-tool-thrashing-001-1-0",
+      "parent_run_id": "llm-tool-thrashing-001-1",
+      "type": "tool",
+      "name": "search",
+      "inputs": {
+        "query": "topic 1"
+      },
+      "outputs": {
+        "output": "Results for topic 1"
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-tool-thrashing-001-2",
+      "parent_run_id": "chain-tool-thrashing-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Task 2: Find information about topic 2."
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "I'll search for topic 2."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 2730,
+          "completion_tokens": 200,
+          "total_tokens": 3900
+        }
+      }
+    },
+    {
+      "run_id": "tool-tool-thrashing-001-2-0",
+      "parent_run_id": "llm-tool-thrashing-001-2",
+      "type": "tool",
+      "name": "search",
+      "inputs": {
+        "query": "topic 2"
+      },
+      "outputs": {
+        "output": "Results for topic 2"
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-tool-thrashing-001-3",
+      "parent_run_id": "chain-tool-thrashing-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Find the answer to the main question."
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Let me search for that."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 3500,
+          "completion_tokens": 200,
+          "total_tokens": 5000
+        }
+      }
+    },
+    {
+      "run_id": "tool-tool-thrashing-001-3-0",
+      "parent_run_id": "llm-tool-thrashing-001-3",
+      "type": "tool",
+      "name": "search",
+      "inputs": {
+        "query": "find the answer",
+        "filter": "recent"
+      },
+      "outputs": {
+        "output": "No results found"
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "tool-tool-thrashing-001-3-1",
+      "parent_run_id": "llm-tool-thrashing-001-3",
+      "type": "tool",
+      "name": "search",
+      "inputs": {
+        "query": "find the answer",
+        "filter": "recent"
+      },
+      "outputs": {
+        "output": "No results found"
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "tool-tool-thrashing-001-3-2",
+      "parent_run_id": "llm-tool-thrashing-001-3",
+      "type": "tool",
+      "name": "search",
+      "inputs": {
+        "query": "find the answer",
+        "filter": "recent"
+      },
+      "outputs": {
+        "output": "No results found"
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "tool-tool-thrashing-001-3-3",
+      "parent_run_id": "llm-tool-thrashing-001-3",
+      "type": "tool",
+      "name": "search",
+      "inputs": {
+        "query": "find the answer",
+        "filter": "recent"
+      },
+      "outputs": {
+        "output": "No results found"
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "tool-tool-thrashing-001-3-4",
+      "parent_run_id": "llm-tool-thrashing-001-3",
+      "type": "tool",
+      "name": "search",
+      "inputs": {
+        "query": "find the answer",
+        "filter": "recent"
+      },
+      "outputs": {
+        "output": "No results found"
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "tool-tool-thrashing-001-3-5",
+      "parent_run_id": "llm-tool-thrashing-001-3",
+      "type": "tool",
+      "name": "search",
+      "inputs": {
+        "query": "find the answer",
+        "filter": "recent"
+      },
+      "outputs": {
+        "output": "Found something"
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-tool-thrashing-001-4",
+      "parent_run_id": "chain-tool-thrashing-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Check status 0"
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Checking status..."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 3849,
+          "completion_tokens": 200,
+          "total_tokens": 5500
+        }
+      }
+    },
+    {
+      "run_id": "tool-tool-thrashing-001-4-0",
+      "parent_run_id": "llm-tool-thrashing-001-4",
+      "type": "tool",
+      "name": "read_file",
+      "inputs": {
+        "path": "/status.txt"
+      },
+      "outputs": {
+        "output": "Status: pending"
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "tool-tool-thrashing-001-4-1",
+      "parent_run_id": "llm-tool-thrashing-001-4",
+      "type": "tool",
+      "name": "write_file",
+      "inputs": {
+        "path": "/status.txt",
+        "content": "updated"
+      },
+      "outputs": {
+        "output": "Written"
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-tool-thrashing-001-5",
+      "parent_run_id": "chain-tool-thrashing-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Check status 1"
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Checking status..."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 4200,
+          "completion_tokens": 200,
+          "total_tokens": 6000
+        }
+      }
+    },
+    {
+      "run_id": "tool-tool-thrashing-001-5-0",
+      "parent_run_id": "llm-tool-thrashing-001-5",
+      "type": "tool",
+      "name": "read_file",
+      "inputs": {
+        "path": "/status.txt"
+      },
+      "outputs": {
+        "output": "Status: pending"
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "tool-tool-thrashing-001-5-1",
+      "parent_run_id": "llm-tool-thrashing-001-5",
+      "type": "tool",
+      "name": "write_file",
+      "inputs": {
+        "path": "/status.txt",
+        "content": "updated"
+      },
+      "outputs": {
+        "output": "Written"
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-tool-thrashing-001-6",
+      "parent_run_id": "chain-tool-thrashing-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Check status 2"
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Checking status..."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 4550,
+          "completion_tokens": 200,
+          "total_tokens": 6500
+        }
+      }
+    },
+    {
+      "run_id": "tool-tool-thrashing-001-6-0",
+      "parent_run_id": "llm-tool-thrashing-001-6",
+      "type": "tool",
+      "name": "read_file",
+      "inputs": {
+        "path": "/status.txt"
+      },
+      "outputs": {
+        "output": "Status: pending"
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "tool-tool-thrashing-001-6-1",
+      "parent_run_id": "llm-tool-thrashing-001-6",
+      "type": "tool",
+      "name": "write_file",
+      "inputs": {
+        "path": "/status.txt",
+        "content": "updated"
+      },
+      "outputs": {
+        "output": "Written"
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-tool-thrashing-001-7",
+      "parent_run_id": "chain-tool-thrashing-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Check status 3"
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Checking status..."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 4900,
+          "completion_tokens": 200,
+          "total_tokens": 7000
+        }
+      }
+    },
+    {
+      "run_id": "tool-tool-thrashing-001-7-0",
+      "parent_run_id": "llm-tool-thrashing-001-7",
+      "type": "tool",
+      "name": "read_file",
+      "inputs": {
+        "path": "/status.txt"
+      },
+      "outputs": {
+        "output": "Status: pending"
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "tool-tool-thrashing-001-7-1",
+      "parent_run_id": "llm-tool-thrashing-001-7",
+      "type": "tool",
+      "name": "write_file",
+      "inputs": {
+        "path": "/status.txt",
+        "content": "updated"
+      },
+      "outputs": {
+        "output": "Written"
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-tool-thrashing-001-8",
+      "parent_run_id": "chain-tool-thrashing-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Process all items."
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Processing..."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 5600,
+          "completion_tokens": 200,
+          "total_tokens": 8000
+        }
+      }
+    },
+    {
+      "run_id": "tool-tool-thrashing-001-8-0",
+      "parent_run_id": "llm-tool-thrashing-001-8",
+      "type": "tool",
+      "name": "tool_0",
+      "inputs": {
+        "item": 0
+      },
+      "outputs": {
+        "output": "Result 0"
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "tool-tool-thrashing-001-8-1",
+      "parent_run_id": "llm-tool-thrashing-001-8",
+      "type": "tool",
+      "name": "tool_1",
+      "inputs": {
+        "item": 1
+      },
+      "outputs": {
+        "output": "Result 1"
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "tool-tool-thrashing-001-8-2",
+      "parent_run_id": "llm-tool-thrashing-001-8",
+      "type": "tool",
+      "name": "tool_2",
+      "inputs": {
+        "item": 2
+      },
+      "outputs": {
+        "output": "Result 2"
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "tool-tool-thrashing-001-8-3",
+      "parent_run_id": "llm-tool-thrashing-001-8",
+      "type": "tool",
+      "name": "tool_0",
+      "inputs": {
+        "item": 3
+      },
+      "outputs": {
+        "output": "Result 3"
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "tool-tool-thrashing-001-8-4",
+      "parent_run_id": "llm-tool-thrashing-001-8",
+      "type": "tool",
+      "name": "tool_1",
+      "inputs": {
+        "item": 4
+      },
+      "outputs": {
+        "output": "Result 4"
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "tool-tool-thrashing-001-8-5",
+      "parent_run_id": "llm-tool-thrashing-001-8",
+      "type": "tool",
+      "name": "tool_2",
+      "inputs": {
+        "item": 5
+      },
+      "outputs": {
+        "output": "Result 5"
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "tool-tool-thrashing-001-8-6",
+      "parent_run_id": "llm-tool-thrashing-001-8",
+      "type": "tool",
+      "name": "tool_0",
+      "inputs": {
+        "item": 6
+      },
+      "outputs": {
+        "output": "Result 6"
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "tool-tool-thrashing-001-8-7",
+      "parent_run_id": "llm-tool-thrashing-001-8",
+      "type": "tool",
+      "name": "tool_1",
+      "inputs": {
+        "item": 7
+      },
+      "outputs": {
+        "output": "Result 7"
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "tool-tool-thrashing-001-8-8",
+      "parent_run_id": "llm-tool-thrashing-001-8",
+      "type": "tool",
+      "name": "tool_2",
+      "inputs": {
+        "item": 8
+      },
+      "outputs": {
+        "output": "Result 8"
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "tool-tool-thrashing-001-8-9",
+      "parent_run_id": "llm-tool-thrashing-001-8",
+      "type": "tool",
+      "name": "tool_0",
+      "inputs": {
+        "item": 9
+      },
+      "outputs": {
+        "output": "Result 9"
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    }
+  ]
+}

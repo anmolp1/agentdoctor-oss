@@ -1,0 +1,968 @@
+{
+  "runs": [
+    {
+      "run_id": "chain-context-erosion-001",
+      "parent_run_id": null,
+      "type": "chain",
+      "name": "AgentExecutor",
+      "inputs": {
+        "input": "Query 0: Analyze the dataset for anomalies in section 0.",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a data analysis assistant. Use the `analyze_data` tool to examine datasets. Always provide thorough analysis with supporting evidence.",
+            "type": "system"
+          }
+        ]
+      },
+      "outputs": {
+        "output": "I'll analyze section 19. The data shows detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis  in this area."
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:30:00Z",
+      "tags": [
+        "agent"
+      ]
+    },
+    {
+      "run_id": "llm-context-erosion-001-0",
+      "parent_run_id": "chain-context-erosion-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Query 0: Analyze the dataset for anomalies in section 0."
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "I'll analyze section 0. The data shows detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis  in this area."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 2100,
+          "completion_tokens": 200,
+          "total_tokens": 3000
+        }
+      }
+    },
+    {
+      "run_id": "tool-context-erosion-001-0-0",
+      "parent_run_id": "llm-context-erosion-001-0",
+      "type": "tool",
+      "name": "analyze_data",
+      "inputs": {
+        "section": 0,
+        "depth": "deep"
+      },
+      "outputs": {
+        "output": "Analysis result section 0: Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum "
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-context-erosion-001-1",
+      "parent_run_id": "chain-context-erosion-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Query 1: Analyze the dataset for anomalies in section 1."
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "I'll analyze section 1. The data shows detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis  in this area."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 3831,
+          "completion_tokens": 200,
+          "total_tokens": 5474
+        }
+      }
+    },
+    {
+      "run_id": "tool-context-erosion-001-1-0",
+      "parent_run_id": "llm-context-erosion-001-1",
+      "type": "tool",
+      "name": "analyze_data",
+      "inputs": {
+        "section": 1,
+        "depth": "deep"
+      },
+      "outputs": {
+        "output": "Analysis result section 1: Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum "
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-context-erosion-001-2",
+      "parent_run_id": "chain-context-erosion-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Query 2: Analyze the dataset for anomalies in section 2."
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "I'll analyze section 2. The data shows detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis  in this area."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 5562,
+          "completion_tokens": 200,
+          "total_tokens": 7947
+        }
+      }
+    },
+    {
+      "run_id": "tool-context-erosion-001-2-0",
+      "parent_run_id": "llm-context-erosion-001-2",
+      "type": "tool",
+      "name": "analyze_data",
+      "inputs": {
+        "section": 2,
+        "depth": "deep"
+      },
+      "outputs": {
+        "output": "Analysis result section 2: Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum "
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-context-erosion-001-3",
+      "parent_run_id": "chain-context-erosion-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Query 3: Analyze the dataset for anomalies in section 3."
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "I'll analyze section 3. The data shows detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis  in this area."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 7294,
+          "completion_tokens": 200,
+          "total_tokens": 10421
+        }
+      }
+    },
+    {
+      "run_id": "tool-context-erosion-001-3-0",
+      "parent_run_id": "llm-context-erosion-001-3",
+      "type": "tool",
+      "name": "analyze_data",
+      "inputs": {
+        "section": 3,
+        "depth": "deep"
+      },
+      "outputs": {
+        "output": "Analysis result section 3: Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum "
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-context-erosion-001-4",
+      "parent_run_id": "chain-context-erosion-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Query 4: Analyze the dataset for anomalies in section 4."
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "I'll analyze section 4. The data shows detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis  in this area."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 9026,
+          "completion_tokens": 200,
+          "total_tokens": 12895
+        }
+      }
+    },
+    {
+      "run_id": "tool-context-erosion-001-4-0",
+      "parent_run_id": "llm-context-erosion-001-4",
+      "type": "tool",
+      "name": "analyze_data",
+      "inputs": {
+        "section": 4,
+        "depth": "deep"
+      },
+      "outputs": {
+        "output": "Analysis result section 4: Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum "
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-context-erosion-001-5",
+      "parent_run_id": "chain-context-erosion-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Query 5: Analyze the dataset for anomalies in section 5."
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "I'll analyze section 5. The data shows detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis  in this area."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 10757,
+          "completion_tokens": 200,
+          "total_tokens": 15368
+        }
+      }
+    },
+    {
+      "run_id": "tool-context-erosion-001-5-0",
+      "parent_run_id": "llm-context-erosion-001-5",
+      "type": "tool",
+      "name": "analyze_data",
+      "inputs": {
+        "section": 5,
+        "depth": "deep"
+      },
+      "outputs": {
+        "output": "Analysis result section 5: Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum "
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-context-erosion-001-6",
+      "parent_run_id": "chain-context-erosion-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Query 6: Analyze the dataset for anomalies in section 6."
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "I'll analyze section 6. The data shows detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis  in this area."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 12489,
+          "completion_tokens": 200,
+          "total_tokens": 17842
+        }
+      }
+    },
+    {
+      "run_id": "tool-context-erosion-001-6-0",
+      "parent_run_id": "llm-context-erosion-001-6",
+      "type": "tool",
+      "name": "analyze_data",
+      "inputs": {
+        "section": 6,
+        "depth": "deep"
+      },
+      "outputs": {
+        "output": "Analysis result section 6: Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum "
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-context-erosion-001-7",
+      "parent_run_id": "chain-context-erosion-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Query 7: Analyze the dataset for anomalies in section 7."
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "I'll analyze section 7. The data shows detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis  in this area."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 14221,
+          "completion_tokens": 200,
+          "total_tokens": 20316
+        }
+      }
+    },
+    {
+      "run_id": "tool-context-erosion-001-7-0",
+      "parent_run_id": "llm-context-erosion-001-7",
+      "type": "tool",
+      "name": "analyze_data",
+      "inputs": {
+        "section": 7,
+        "depth": "deep"
+      },
+      "outputs": {
+        "output": "Analysis result section 7: Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum "
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-context-erosion-001-8",
+      "parent_run_id": "chain-context-erosion-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Query 8: Analyze the dataset for anomalies in section 8."
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "I'll analyze section 8. The data shows detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis  in this area."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 15952,
+          "completion_tokens": 200,
+          "total_tokens": 22789
+        }
+      }
+    },
+    {
+      "run_id": "tool-context-erosion-001-8-0",
+      "parent_run_id": "llm-context-erosion-001-8",
+      "type": "tool",
+      "name": "analyze_data",
+      "inputs": {
+        "section": 8,
+        "depth": "deep"
+      },
+      "outputs": {
+        "output": "Analysis result section 8: Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum "
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-context-erosion-001-9",
+      "parent_run_id": "chain-context-erosion-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Query 9: Analyze the dataset for anomalies in section 9."
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "I'll analyze section 9. The data shows detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis  in this area."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 17684,
+          "completion_tokens": 200,
+          "total_tokens": 25263
+        }
+      }
+    },
+    {
+      "run_id": "tool-context-erosion-001-9-0",
+      "parent_run_id": "llm-context-erosion-001-9",
+      "type": "tool",
+      "name": "analyze_data",
+      "inputs": {
+        "section": 9,
+        "depth": "deep"
+      },
+      "outputs": {
+        "output": "Analysis result section 9: Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum "
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-context-erosion-001-10",
+      "parent_run_id": "chain-context-erosion-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Query 10: Analyze the dataset for anomalies in section 10."
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "I'll analyze section 10. The data shows detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis  in this area."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 19415,
+          "completion_tokens": 200,
+          "total_tokens": 27737
+        }
+      }
+    },
+    {
+      "run_id": "tool-context-erosion-001-10-0",
+      "parent_run_id": "llm-context-erosion-001-10",
+      "type": "tool",
+      "name": "analyze_data",
+      "inputs": {
+        "section": 10,
+        "depth": "deep"
+      },
+      "outputs": {
+        "output": "Analysis result section 10: Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum "
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-context-erosion-001-11",
+      "parent_run_id": "chain-context-erosion-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Query 11: Analyze the dataset for anomalies in section 11."
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "I'll analyze section 11. The data shows detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis  in this area."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 21147,
+          "completion_tokens": 200,
+          "total_tokens": 30211
+        }
+      }
+    },
+    {
+      "run_id": "tool-context-erosion-001-11-0",
+      "parent_run_id": "llm-context-erosion-001-11",
+      "type": "tool",
+      "name": "analyze_data",
+      "inputs": {
+        "section": 11,
+        "depth": "deep"
+      },
+      "outputs": {
+        "output": "Analysis result section 11: Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum "
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-context-erosion-001-12",
+      "parent_run_id": "chain-context-erosion-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Query 12: Analyze the dataset for anomalies in section 12."
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "I'll analyze section 12. The data shows detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis  in this area."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 22878,
+          "completion_tokens": 200,
+          "total_tokens": 32684
+        }
+      }
+    },
+    {
+      "run_id": "tool-context-erosion-001-12-0",
+      "parent_run_id": "llm-context-erosion-001-12",
+      "type": "tool",
+      "name": "analyze_data",
+      "inputs": {
+        "section": 12,
+        "depth": "deep"
+      },
+      "outputs": {
+        "output": "Analysis result section 12: Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum "
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-context-erosion-001-13",
+      "parent_run_id": "chain-context-erosion-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Query 13: Analyze the dataset for anomalies in section 13."
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "I'll analyze section 13. The data shows detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis  in this area."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 24610,
+          "completion_tokens": 200,
+          "total_tokens": 35158
+        }
+      }
+    },
+    {
+      "run_id": "tool-context-erosion-001-13-0",
+      "parent_run_id": "llm-context-erosion-001-13",
+      "type": "tool",
+      "name": "analyze_data",
+      "inputs": {
+        "section": 13,
+        "depth": "deep"
+      },
+      "outputs": {
+        "output": "Analysis result section 13: Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum "
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-context-erosion-001-14",
+      "parent_run_id": "chain-context-erosion-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Query 14: Analyze the dataset for anomalies in section 14."
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "I'll analyze section 14. The data shows detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis  in this area."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 26342,
+          "completion_tokens": 200,
+          "total_tokens": 37632
+        }
+      }
+    },
+    {
+      "run_id": "tool-context-erosion-001-14-0",
+      "parent_run_id": "llm-context-erosion-001-14",
+      "type": "tool",
+      "name": "analyze_data",
+      "inputs": {
+        "section": 14,
+        "depth": "deep"
+      },
+      "outputs": {
+        "output": "Analysis result section 14: Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum "
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-context-erosion-001-15",
+      "parent_run_id": "chain-context-erosion-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Query 15: Analyze the dataset for anomalies in section 15."
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "I'll analyze section 15. The data shows detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis  in this area."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 28073,
+          "completion_tokens": 200,
+          "total_tokens": 40105
+        }
+      }
+    },
+    {
+      "run_id": "tool-context-erosion-001-15-0",
+      "parent_run_id": "llm-context-erosion-001-15",
+      "type": "tool",
+      "name": "analyze_data",
+      "inputs": {
+        "section": 15,
+        "depth": "deep"
+      },
+      "outputs": {
+        "output": "Analysis result section 15: Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum "
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-context-erosion-001-16",
+      "parent_run_id": "chain-context-erosion-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Query 16: Analyze the dataset for anomalies in section 16."
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "I'll analyze section 16. The data shows detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis  in this area."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 29805,
+          "completion_tokens": 200,
+          "total_tokens": 42579
+        }
+      }
+    },
+    {
+      "run_id": "tool-context-erosion-001-16-0",
+      "parent_run_id": "llm-context-erosion-001-16",
+      "type": "tool",
+      "name": "analyze_data",
+      "inputs": {
+        "section": 16,
+        "depth": "deep"
+      },
+      "outputs": {
+        "output": "Analysis result section 16: Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum "
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-context-erosion-001-17",
+      "parent_run_id": "chain-context-erosion-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Query 17: Analyze the dataset for anomalies in section 17."
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "I'll analyze section 17. The data shows detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis  in this area."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 31537,
+          "completion_tokens": 200,
+          "total_tokens": 45053
+        }
+      }
+    },
+    {
+      "run_id": "tool-context-erosion-001-17-0",
+      "parent_run_id": "llm-context-erosion-001-17",
+      "type": "tool",
+      "name": "analyze_data",
+      "inputs": {
+        "section": 17,
+        "depth": "deep"
+      },
+      "outputs": {
+        "output": "Analysis result section 17: Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum "
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-context-erosion-001-18",
+      "parent_run_id": "chain-context-erosion-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Query 18: Analyze the dataset for anomalies in section 18."
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "I'll analyze section 18. The data shows detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis  in this area."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 33268,
+          "completion_tokens": 200,
+          "total_tokens": 47526
+        }
+      }
+    },
+    {
+      "run_id": "tool-context-erosion-001-18-0",
+      "parent_run_id": "llm-context-erosion-001-18",
+      "type": "tool",
+      "name": "analyze_data",
+      "inputs": {
+        "section": 18,
+        "depth": "deep"
+      },
+      "outputs": {
+        "output": "Analysis result section 18: Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum "
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-context-erosion-001-19",
+      "parent_run_id": "chain-context-erosion-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Query 19: Analyze the dataset for anomalies in section 19."
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "I'll analyze section 19. The data shows detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis detailed analysis  in this area."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 35000,
+          "completion_tokens": 200,
+          "total_tokens": 50000
+        }
+      }
+    },
+    {
+      "run_id": "tool-context-erosion-001-19-0",
+      "parent_run_id": "llm-context-erosion-001-19",
+      "type": "tool",
+      "name": "analyze_data",
+      "inputs": {
+        "section": 19,
+        "depth": "deep"
+      },
+      "outputs": {
+        "output": "Analysis result section 19: Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum "
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    }
+  ]
+}

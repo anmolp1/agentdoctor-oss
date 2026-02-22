@@ -1,0 +1,733 @@
+{
+  "runs": [
+    {
+      "run_id": "chain-healthy-session-001",
+      "parent_run_id": null,
+      "type": "chain",
+      "name": "AgentExecutor",
+      "inputs": {
+        "input": "User message for turn 0: Can you help me with task 0?",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a helpful coding assistant that helps users with software engineering tasks. You have access to the following tools:\n\n- `search`: Use this tool to search for information in the codebase, documentation, or external sources. Provide a clear search query.\n- `read_file`: Use this tool to read the contents of a file. Provide the file path.\n- `write_file`: Use this tool to write content to a file. Provide the file path and content.\n\nGuidelines:\n1. Always verify your results before responding to the user.\n2. When making changes, explain what you are doing and why.\n3. If you encounter an error, try an alternative approach before giving up.\n4. Be concise but thorough in your responses.\n5. Always consider edge cases and error handling.\n6. Follow best practices for the programming language being used.\n7. When searching, use specific and targeted queries.\n8. Always read a file before modifying it to understand context.\n9. Provide clear explanations of any changes made.\n10. If unsure about something, ask the user for clarification.",
+            "type": "system"
+          }
+        ]
+      },
+      "outputs": {
+        "output": "Sure, I'll help you with task 14. Let me use the appropriate tool."
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:30:00Z",
+      "tags": [
+        "agent"
+      ]
+    },
+    {
+      "run_id": "llm-healthy-session-001-0",
+      "parent_run_id": "chain-healthy-session-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "User message for turn 0: Can you help me with task 0?"
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Sure, I'll help you with task 0. Let me use the appropriate tool."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 728,
+          "completion_tokens": 200,
+          "total_tokens": 1040
+        }
+      }
+    },
+    {
+      "run_id": "tool-healthy-session-001-0-0",
+      "parent_run_id": "llm-healthy-session-001-0",
+      "type": "tool",
+      "name": "search",
+      "inputs": {
+        "query": "task 0 data",
+        "path": "/file0.txt"
+      },
+      "outputs": {
+        "output": "Result for task 0: data processed successfully."
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-healthy-session-001-1",
+      "parent_run_id": "chain-healthy-session-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "User message for turn 1: Can you help me with task 1?"
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Sure, I'll help you with task 1. Let me use the appropriate tool."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 760,
+          "completion_tokens": 200,
+          "total_tokens": 1087
+        }
+      }
+    },
+    {
+      "run_id": "tool-healthy-session-001-1-0",
+      "parent_run_id": "llm-healthy-session-001-1",
+      "type": "tool",
+      "name": "search",
+      "inputs": {
+        "query": "task 1 data",
+        "path": "/file1.txt"
+      },
+      "outputs": {
+        "output": "Result for task 1: data processed successfully."
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-healthy-session-001-2",
+      "parent_run_id": "chain-healthy-session-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "User message for turn 2: Can you help me with task 2?"
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Sure, I'll help you with task 2. Let me use the appropriate tool."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 727,
+          "completion_tokens": 200,
+          "total_tokens": 1039
+        }
+      }
+    },
+    {
+      "run_id": "tool-healthy-session-001-2-0",
+      "parent_run_id": "llm-healthy-session-001-2",
+      "type": "tool",
+      "name": "read_file",
+      "inputs": {
+        "query": "task 2 data",
+        "path": "/file2.txt"
+      },
+      "outputs": {
+        "output": "Result for task 2: data processed successfully."
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-healthy-session-001-3",
+      "parent_run_id": "chain-healthy-session-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "User message for turn 3: Can you help me with task 3?"
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Sure, I'll help you with task 3. Let me use the appropriate tool."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 770,
+          "completion_tokens": 200,
+          "total_tokens": 1100
+        }
+      }
+    },
+    {
+      "run_id": "tool-healthy-session-001-3-0",
+      "parent_run_id": "llm-healthy-session-001-3",
+      "type": "tool",
+      "name": "search",
+      "inputs": {
+        "query": "task 3 data",
+        "path": "/file3.txt"
+      },
+      "outputs": {
+        "output": "Result for task 3: data processed successfully."
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-healthy-session-001-4",
+      "parent_run_id": "chain-healthy-session-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "User message for turn 4: Can you help me with task 4?"
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Sure, I'll help you with task 4. Let me use the appropriate tool."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 817,
+          "completion_tokens": 200,
+          "total_tokens": 1168
+        }
+      }
+    },
+    {
+      "run_id": "tool-healthy-session-001-4-0",
+      "parent_run_id": "llm-healthy-session-001-4",
+      "type": "tool",
+      "name": "write_file",
+      "inputs": {
+        "query": "task 4 data",
+        "path": "/file4.txt"
+      },
+      "outputs": {
+        "output": "Result for task 4: data processed successfully."
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-healthy-session-001-5",
+      "parent_run_id": "chain-healthy-session-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "User message for turn 5: Can you help me with task 5?"
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Sure, I'll help you with task 5. Let me use the appropriate tool."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 754,
+          "completion_tokens": 200,
+          "total_tokens": 1078
+        }
+      }
+    },
+    {
+      "run_id": "tool-healthy-session-001-5-0",
+      "parent_run_id": "llm-healthy-session-001-5",
+      "type": "tool",
+      "name": "read_file",
+      "inputs": {
+        "query": "task 5 data",
+        "path": "/file5.txt"
+      },
+      "outputs": {
+        "output": "Result for task 5: data processed successfully."
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-healthy-session-001-6",
+      "parent_run_id": "chain-healthy-session-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "User message for turn 6: Can you help me with task 6?"
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Sure, I'll help you with task 6. Let me use the appropriate tool."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 791,
+          "completion_tokens": 200,
+          "total_tokens": 1130
+        }
+      }
+    },
+    {
+      "run_id": "tool-healthy-session-001-6-0",
+      "parent_run_id": "llm-healthy-session-001-6",
+      "type": "tool",
+      "name": "search",
+      "inputs": {
+        "query": "task 6 data",
+        "path": "/file6.txt"
+      },
+      "outputs": {
+        "output": "Result for task 6: data processed successfully."
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-healthy-session-001-7",
+      "parent_run_id": "chain-healthy-session-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "User message for turn 7: Can you help me with task 7?"
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Sure, I'll help you with task 7. Let me use the appropriate tool."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 832,
+          "completion_tokens": 200,
+          "total_tokens": 1189
+        }
+      }
+    },
+    {
+      "run_id": "tool-healthy-session-001-7-0",
+      "parent_run_id": "llm-healthy-session-001-7",
+      "type": "tool",
+      "name": "write_file",
+      "inputs": {
+        "query": "task 7 data",
+        "path": "/file7.txt"
+      },
+      "outputs": {
+        "output": "Result for task 7: data processed successfully."
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-healthy-session-001-8",
+      "parent_run_id": "chain-healthy-session-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "User message for turn 8: Can you help me with task 8?"
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Sure, I'll help you with task 8. Let me use the appropriate tool."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 802,
+          "completion_tokens": 200,
+          "total_tokens": 1147
+        }
+      }
+    },
+    {
+      "run_id": "tool-healthy-session-001-8-0",
+      "parent_run_id": "llm-healthy-session-001-8",
+      "type": "tool",
+      "name": "search",
+      "inputs": {
+        "query": "task 8 data",
+        "path": "/file8.txt"
+      },
+      "outputs": {
+        "output": "Result for task 8: data processed successfully."
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-healthy-session-001-9",
+      "parent_run_id": "chain-healthy-session-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "User message for turn 9: Can you help me with task 9?"
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Sure, I'll help you with task 9. Let me use the appropriate tool."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 833,
+          "completion_tokens": 200,
+          "total_tokens": 1190
+        }
+      }
+    },
+    {
+      "run_id": "tool-healthy-session-001-9-0",
+      "parent_run_id": "llm-healthy-session-001-9",
+      "type": "tool",
+      "name": "search",
+      "inputs": {
+        "query": "task 9 data",
+        "path": "/file9.txt"
+      },
+      "outputs": {
+        "output": "Result for task 9: data processed successfully."
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-healthy-session-001-10",
+      "parent_run_id": "chain-healthy-session-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "User message for turn 10: Can you help me with task 10?"
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Sure, I'll help you with task 10. Let me use the appropriate tool."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 868,
+          "completion_tokens": 200,
+          "total_tokens": 1240
+        }
+      }
+    },
+    {
+      "run_id": "tool-healthy-session-001-10-0",
+      "parent_run_id": "llm-healthy-session-001-10",
+      "type": "tool",
+      "name": "read_file",
+      "inputs": {
+        "query": "task 10 data",
+        "path": "/file10.txt"
+      },
+      "outputs": {
+        "output": "Result for task 10: data processed successfully."
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-healthy-session-001-11",
+      "parent_run_id": "chain-healthy-session-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "User message for turn 11: Can you help me with task 11?"
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Sure, I'll help you with task 11. Let me use the appropriate tool."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 851,
+          "completion_tokens": 200,
+          "total_tokens": 1216
+        }
+      }
+    },
+    {
+      "run_id": "tool-healthy-session-001-11-0",
+      "parent_run_id": "llm-healthy-session-001-11",
+      "type": "tool",
+      "name": "write_file",
+      "inputs": {
+        "query": "task 11 data",
+        "path": "/file11.txt"
+      },
+      "outputs": {
+        "output": "Result for task 11: data processed successfully."
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-healthy-session-001-12",
+      "parent_run_id": "chain-healthy-session-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "User message for turn 12: Can you help me with task 12?"
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Sure, I'll help you with task 12. Let me use the appropriate tool."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 896,
+          "completion_tokens": 200,
+          "total_tokens": 1280
+        }
+      }
+    },
+    {
+      "run_id": "tool-healthy-session-001-12-0",
+      "parent_run_id": "llm-healthy-session-001-12",
+      "type": "tool",
+      "name": "read_file",
+      "inputs": {
+        "query": "task 12 data",
+        "path": "/file12.txt"
+      },
+      "outputs": {
+        "output": "Result for task 12: data processed successfully."
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-healthy-session-001-13",
+      "parent_run_id": "chain-healthy-session-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "User message for turn 13: Can you help me with task 13?"
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Sure, I'll help you with task 13. Let me use the appropriate tool."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 924,
+          "completion_tokens": 200,
+          "total_tokens": 1321
+        }
+      }
+    },
+    {
+      "run_id": "tool-healthy-session-001-13-0",
+      "parent_run_id": "llm-healthy-session-001-13",
+      "type": "tool",
+      "name": "search",
+      "inputs": {
+        "query": "task 13 data",
+        "path": "/file13.txt"
+      },
+      "outputs": {
+        "output": "Result for task 13: data processed successfully."
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-healthy-session-001-14",
+      "parent_run_id": "chain-healthy-session-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "User message for turn 14: Can you help me with task 14?"
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Sure, I'll help you with task 14. Let me use the appropriate tool."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 878,
+          "completion_tokens": 200,
+          "total_tokens": 1255
+        }
+      }
+    },
+    {
+      "run_id": "tool-healthy-session-001-14-0",
+      "parent_run_id": "llm-healthy-session-001-14",
+      "type": "tool",
+      "name": "read_file",
+      "inputs": {
+        "query": "task 14 data",
+        "path": "/file14.txt"
+      },
+      "outputs": {
+        "output": "Result for task 14: data processed successfully."
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    }
+  ]
+}

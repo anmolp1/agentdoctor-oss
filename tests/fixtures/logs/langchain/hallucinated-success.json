@@ -1,0 +1,485 @@
+{
+  "runs": [
+    {
+      "run_id": "chain-hallucinated-success-001",
+      "parent_run_id": null,
+      "type": "chain",
+      "name": "AgentExecutor",
+      "inputs": {
+        "input": "Search for recent sales data.",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a sales analytics assistant. Use `search` to find data, `get_report` to get reports, and `list_products` to list products.",
+            "type": "system"
+          }
+        ]
+      },
+      "outputs": {
+        "output": "Answer to question 9."
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:30:00Z",
+      "tags": [
+        "agent"
+      ]
+    },
+    {
+      "run_id": "llm-hallucinated-success-001-0",
+      "parent_run_id": "chain-hallucinated-success-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Search for recent sales data."
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "I'll search for recent sales data."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 1400,
+          "completion_tokens": 200,
+          "total_tokens": 2000
+        }
+      }
+    },
+    {
+      "run_id": "tool-hallucinated-success-001-0-0",
+      "parent_run_id": "llm-hallucinated-success-001-0",
+      "type": "tool",
+      "name": "search",
+      "inputs": {
+        "query": "recent sales data"
+      },
+      "outputs": {
+        "output": "{\"results\": [{\"item\": \"Widget\", \"amount\": 1500}]}"
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-hallucinated-success-001-1",
+      "parent_run_id": "chain-hallucinated-success-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Get the quarterly report."
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "The quarterly report shows revenue of $2.5M, with a 15% increase from last quarter. The top performing product was the Enterprise Suite at $1.2M."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 1750,
+          "completion_tokens": 200,
+          "total_tokens": 2500
+        }
+      }
+    },
+    {
+      "run_id": "tool-hallucinated-success-001-1-0",
+      "parent_run_id": "llm-hallucinated-success-001-1",
+      "type": "tool",
+      "name": "get_report",
+      "inputs": {
+        "type": "quarterly",
+        "period": "Q4"
+      },
+      "outputs": null,
+      "error": "Report not found",
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-hallucinated-success-001-2",
+      "parent_run_id": "chain-hallucinated-success-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Look up customer John Smith."
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "John Smith is a premium customer with account #12345. His last purchase was on January 15, 2026 for $3,200."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 2100,
+          "completion_tokens": 200,
+          "total_tokens": 3000
+        }
+      }
+    },
+    {
+      "run_id": "tool-hallucinated-success-001-2-0",
+      "parent_run_id": "llm-hallucinated-success-001-2",
+      "type": "tool",
+      "name": "search",
+      "inputs": {
+        "query": "John Smith"
+      },
+      "outputs": {
+        "output": "{}"
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-hallucinated-success-001-3",
+      "parent_run_id": "chain-hallucinated-success-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "List all products."
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Here are all the products: Widget A, Widget B, Widget C. That covers our complete catalog."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 2450,
+          "completion_tokens": 200,
+          "total_tokens": 3500
+        }
+      }
+    },
+    {
+      "run_id": "tool-hallucinated-success-001-3-0",
+      "parent_run_id": "llm-hallucinated-success-001-3",
+      "type": "tool",
+      "name": "list_products",
+      "inputs": {},
+      "outputs": {
+        "output": "{\"products\": [\"Widget A\", \"Widget B\", \"Widget C\"], \"note\": \"Results truncated. More results available. Showing first 3 of 150.\"}"
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-hallucinated-success-001-4",
+      "parent_run_id": "chain-hallucinated-success-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Question 4"
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Answer to question 4."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 2450,
+          "completion_tokens": 200,
+          "total_tokens": 3500
+        }
+      }
+    },
+    {
+      "run_id": "tool-hallucinated-success-001-4-0",
+      "parent_run_id": "llm-hallucinated-success-001-4",
+      "type": "tool",
+      "name": "search",
+      "inputs": {
+        "query": "q4"
+      },
+      "outputs": {
+        "output": "Result for q4"
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-hallucinated-success-001-5",
+      "parent_run_id": "chain-hallucinated-success-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Question 5"
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Answer to question 5."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 2660,
+          "completion_tokens": 200,
+          "total_tokens": 3800
+        }
+      }
+    },
+    {
+      "run_id": "tool-hallucinated-success-001-5-0",
+      "parent_run_id": "llm-hallucinated-success-001-5",
+      "type": "tool",
+      "name": "search",
+      "inputs": {
+        "query": "q5"
+      },
+      "outputs": {
+        "output": "Result for q5"
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-hallucinated-success-001-6",
+      "parent_run_id": "chain-hallucinated-success-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Question 6"
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Answer to question 6."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 2870,
+          "completion_tokens": 200,
+          "total_tokens": 4100
+        }
+      }
+    },
+    {
+      "run_id": "tool-hallucinated-success-001-6-0",
+      "parent_run_id": "llm-hallucinated-success-001-6",
+      "type": "tool",
+      "name": "search",
+      "inputs": {
+        "query": "q6"
+      },
+      "outputs": {
+        "output": "Result for q6"
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-hallucinated-success-001-7",
+      "parent_run_id": "chain-hallucinated-success-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Question 7"
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Answer to question 7."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 3080,
+          "completion_tokens": 200,
+          "total_tokens": 4400
+        }
+      }
+    },
+    {
+      "run_id": "tool-hallucinated-success-001-7-0",
+      "parent_run_id": "llm-hallucinated-success-001-7",
+      "type": "tool",
+      "name": "search",
+      "inputs": {
+        "query": "q7"
+      },
+      "outputs": {
+        "output": "Result for q7"
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-hallucinated-success-001-8",
+      "parent_run_id": "chain-hallucinated-success-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Question 8"
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Answer to question 8."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 3290,
+          "completion_tokens": 200,
+          "total_tokens": 4700
+        }
+      }
+    },
+    {
+      "run_id": "tool-hallucinated-success-001-8-0",
+      "parent_run_id": "llm-hallucinated-success-001-8",
+      "type": "tool",
+      "name": "search",
+      "inputs": {
+        "query": "q8"
+      },
+      "outputs": {
+        "output": "Result for q8"
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-hallucinated-success-001-9",
+      "parent_run_id": "chain-hallucinated-success-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Question 9"
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Answer to question 9."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 3500,
+          "completion_tokens": 200,
+          "total_tokens": 5000
+        }
+      }
+    },
+    {
+      "run_id": "tool-hallucinated-success-001-9-0",
+      "parent_run_id": "llm-hallucinated-success-001-9",
+      "type": "tool",
+      "name": "search",
+      "inputs": {
+        "query": "q9"
+      },
+      "outputs": {
+        "output": "Result for q9"
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "name": "agentdoctor",
+  "version": "0.1.0",
+  "description": "Diagnose your AI agents before they silently fail.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "bin": {
+    "agentdoctor": "./dist/cli/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint src/ tests/",
+    "lint:fix": "eslint src/ tests/ --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "test:ci": "vitest run --coverage",
+    "test:regression": "vitest run tests/regression/",
+    "generate-fixtures": "tsx scripts/generate-fixtures.ts",
+    "prepublishOnly": "pnpm run build"
+  },
+  "keywords": [
+    "ai",
+    "agents",
+    "reliability",
+    "diagnostics",
+    "llm",
+    "observability",
+    "langchain",
+    "openai",
+    "health-check"
+  ],
+  "author": "Anmol <anmol@mldeep.systems>",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mldeep-systems/agentdoctor"
+  },
+  "homepage": "https://github.com/mldeep-systems/agentdoctor",
+  "bugs": "https://github.com/mldeep-systems/agentdoctor/issues",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "picocolors": "^1.1.1",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.0",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "@vitest/coverage-v8": "^2.1.9",
+    "eslint": "^8.57.1",
+    "prettier": "^3.8.1",
+    "tsup": "^8.5.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vitest": "^2.1.9"
+  }
+}
