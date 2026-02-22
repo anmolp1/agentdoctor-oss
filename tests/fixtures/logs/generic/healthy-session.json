@@ -1,0 +1,400 @@
+{
+  "sessions": [
+    {
+      "session_id": "healthy-session-001",
+      "system_prompt": "You are a helpful coding assistant that helps users with software engineering tasks. You have access to the following tools:\n\n- `search`: Use this tool to search for information in the codebase, documentation, or external sources. Provide a clear search query.\n- `read_file`: Use this tool to read the contents of a file. Provide the file path.\n- `write_file`: Use this tool to write content to a file. Provide the file path and content.\n\nGuidelines:\n1. Always verify your results before responding to the user.\n2. When making changes, explain what you are doing and why.\n3. If you encounter an error, try an alternative approach before giving up.\n4. Be concise but thorough in your responses.\n5. Always consider edge cases and error handling.\n6. Follow best practices for the programming language being used.\n7. When searching, use specific and targeted queries.\n8. Always read a file before modifying it to understand context.\n9. Provide clear explanations of any changes made.\n10. If unsure about something, ask the user for clarification.",
+      "tool_schemas": [
+        {
+          "name": "search",
+          "description": "Search for information"
+        },
+        {
+          "name": "read_file",
+          "description": "Read a file"
+        },
+        {
+          "name": "write_file",
+          "description": "Write a file"
+        }
+      ],
+      "framework": "generic",
+      "turns": [
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "User message for turn 0: Can you help me with task 0?"
+            },
+            {
+              "role": "assistant",
+              "content": "Sure, I'll help you with task 0. Let me use the appropriate tool."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "search",
+              "input": {
+                "query": "task 0 data",
+                "path": "/file0.txt"
+              },
+              "output": "Result for task 0: data processed successfully.",
+              "status": "success"
+            }
+          ],
+          "turnIndex": 0,
+          "contextTokenCount": 1040
+        },
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "User message for turn 1: Can you help me with task 1?"
+            },
+            {
+              "role": "assistant",
+              "content": "Sure, I'll help you with task 1. Let me use the appropriate tool."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "search",
+              "input": {
+                "query": "task 1 data",
+                "path": "/file1.txt"
+              },
+              "output": "Result for task 1: data processed successfully.",
+              "status": "success"
+            }
+          ],
+          "turnIndex": 1,
+          "contextTokenCount": 1087
+        },
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "User message for turn 2: Can you help me with task 2?"
+            },
+            {
+              "role": "assistant",
+              "content": "Sure, I'll help you with task 2. Let me use the appropriate tool."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "read_file",
+              "input": {
+                "query": "task 2 data",
+                "path": "/file2.txt"
+              },
+              "output": "Result for task 2: data processed successfully.",
+              "status": "success"
+            }
+          ],
+          "turnIndex": 2,
+          "contextTokenCount": 1039
+        },
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "User message for turn 3: Can you help me with task 3?"
+            },
+            {
+              "role": "assistant",
+              "content": "Sure, I'll help you with task 3. Let me use the appropriate tool."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "search",
+              "input": {
+                "query": "task 3 data",
+                "path": "/file3.txt"
+              },
+              "output": "Result for task 3: data processed successfully.",
+              "status": "success"
+            }
+          ],
+          "turnIndex": 3,
+          "contextTokenCount": 1100
+        },
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "User message for turn 4: Can you help me with task 4?"
+            },
+            {
+              "role": "assistant",
+              "content": "Sure, I'll help you with task 4. Let me use the appropriate tool."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "write_file",
+              "input": {
+                "query": "task 4 data",
+                "path": "/file4.txt"
+              },
+              "output": "Result for task 4: data processed successfully.",
+              "status": "success"
+            }
+          ],
+          "turnIndex": 4,
+          "contextTokenCount": 1168
+        },
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "User message for turn 5: Can you help me with task 5?"
+            },
+            {
+              "role": "assistant",
+              "content": "Sure, I'll help you with task 5. Let me use the appropriate tool."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "read_file",
+              "input": {
+                "query": "task 5 data",
+                "path": "/file5.txt"
+              },
+              "output": "Result for task 5: data processed successfully.",
+              "status": "success"
+            }
+          ],
+          "turnIndex": 5,
+          "contextTokenCount": 1078
+        },
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "User message for turn 6: Can you help me with task 6?"
+            },
+            {
+              "role": "assistant",
+              "content": "Sure, I'll help you with task 6. Let me use the appropriate tool."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "search",
+              "input": {
+                "query": "task 6 data",
+                "path": "/file6.txt"
+              },
+              "output": "Result for task 6: data processed successfully.",
+              "status": "success"
+            }
+          ],
+          "turnIndex": 6,
+          "contextTokenCount": 1130
+        },
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "User message for turn 7: Can you help me with task 7?"
+            },
+            {
+              "role": "assistant",
+              "content": "Sure, I'll help you with task 7. Let me use the appropriate tool."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "write_file",
+              "input": {
+                "query": "task 7 data",
+                "path": "/file7.txt"
+              },
+              "output": "Result for task 7: data processed successfully.",
+              "status": "success"
+            }
+          ],
+          "turnIndex": 7,
+          "contextTokenCount": 1189
+        },
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "User message for turn 8: Can you help me with task 8?"
+            },
+            {
+              "role": "assistant",
+              "content": "Sure, I'll help you with task 8. Let me use the appropriate tool."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "search",
+              "input": {
+                "query": "task 8 data",
+                "path": "/file8.txt"
+              },
+              "output": "Result for task 8: data processed successfully.",
+              "status": "success"
+            }
+          ],
+          "turnIndex": 8,
+          "contextTokenCount": 1147
+        },
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "User message for turn 9: Can you help me with task 9?"
+            },
+            {
+              "role": "assistant",
+              "content": "Sure, I'll help you with task 9. Let me use the appropriate tool."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "search",
+              "input": {
+                "query": "task 9 data",
+                "path": "/file9.txt"
+              },
+              "output": "Result for task 9: data processed successfully.",
+              "status": "success"
+            }
+          ],
+          "turnIndex": 9,
+          "contextTokenCount": 1190
+        },
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "User message for turn 10: Can you help me with task 10?"
+            },
+            {
+              "role": "assistant",
+              "content": "Sure, I'll help you with task 10. Let me use the appropriate tool."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "read_file",
+              "input": {
+                "query": "task 10 data",
+                "path": "/file10.txt"
+              },
+              "output": "Result for task 10: data processed successfully.",
+              "status": "success"
+            }
+          ],
+          "turnIndex": 10,
+          "contextTokenCount": 1240
+        },
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "User message for turn 11: Can you help me with task 11?"
+            },
+            {
+              "role": "assistant",
+              "content": "Sure, I'll help you with task 11. Let me use the appropriate tool."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "write_file",
+              "input": {
+                "query": "task 11 data",
+                "path": "/file11.txt"
+              },
+              "output": "Result for task 11: data processed successfully.",
+              "status": "success"
+            }
+          ],
+          "turnIndex": 11,
+          "contextTokenCount": 1216
+        },
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "User message for turn 12: Can you help me with task 12?"
+            },
+            {
+              "role": "assistant",
+              "content": "Sure, I'll help you with task 12. Let me use the appropriate tool."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "read_file",
+              "input": {
+                "query": "task 12 data",
+                "path": "/file12.txt"
+              },
+              "output": "Result for task 12: data processed successfully.",
+              "status": "success"
+            }
+          ],
+          "turnIndex": 12,
+          "contextTokenCount": 1280
+        },
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "User message for turn 13: Can you help me with task 13?"
+            },
+            {
+              "role": "assistant",
+              "content": "Sure, I'll help you with task 13. Let me use the appropriate tool."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "search",
+              "input": {
+                "query": "task 13 data",
+                "path": "/file13.txt"
+              },
+              "output": "Result for task 13: data processed successfully.",
+              "status": "success"
+            }
+          ],
+          "turnIndex": 13,
+          "contextTokenCount": 1321
+        },
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "User message for turn 14: Can you help me with task 14?"
+            },
+            {
+              "role": "assistant",
+              "content": "Sure, I'll help you with task 14. Let me use the appropriate tool."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "read_file",
+              "input": {
+                "query": "task 14 data",
+                "path": "/file14.txt"
+              },
+              "output": "Result for task 14: data processed successfully.",
+              "status": "success"
+            }
+          ],
+          "turnIndex": 14,
+          "contextTokenCount": 1255
+        }
+      ]
+    }
+  ]
+}

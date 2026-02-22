@@ -1,0 +1,793 @@
+{
+  "sessions": [
+    {
+      "session_id": "multi-pathology-001",
+      "system_prompt": "You are a multi-purpose assistant. Use `search`, `read_file`, and `api_call` tools.",
+      "tool_schemas": [
+        {
+          "name": "search",
+          "description": "Search"
+        },
+        {
+          "name": "read_file",
+          "description": "Read files"
+        },
+        {
+          "name": "api_call",
+          "description": "Call API"
+        }
+      ],
+      "framework": "generic",
+      "turns": [
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "Task 0: Handle request 0."
+            },
+            {
+              "role": "assistant",
+              "content": "Completed task 0."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "search",
+              "input": {
+                "query": "task 0"
+              },
+              "output": "Result 0",
+              "status": "success"
+            }
+          ],
+          "turnIndex": 0,
+          "contextTokenCount": 3000
+        },
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "Task 1: Handle request 1."
+            },
+            {
+              "role": "assistant",
+              "content": "Completed task 1."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "read_file",
+              "input": {
+                "query": "task 1"
+              },
+              "output": "Result 1",
+              "status": "success"
+            }
+          ],
+          "turnIndex": 1,
+          "contextTokenCount": 5400
+        },
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "Task 2: Handle request 2."
+            },
+            {
+              "role": "assistant",
+              "content": "Completed task 2."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "search",
+              "input": {
+                "query": "task 2"
+              },
+              "output": "Result 2",
+              "status": "success"
+            }
+          ],
+          "turnIndex": 2,
+          "contextTokenCount": 7800
+        },
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "Task 3: Handle request 3."
+            },
+            {
+              "role": "assistant",
+              "content": "Completed task 3."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "read_file",
+              "input": {
+                "query": "task 3"
+              },
+              "output": "Result 3",
+              "status": "success"
+            }
+          ],
+          "turnIndex": 3,
+          "contextTokenCount": 10200
+        },
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "Task 4: Handle request 4."
+            },
+            {
+              "role": "assistant",
+              "content": "Completed task 4."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "search",
+              "input": {
+                "query": "task 4"
+              },
+              "output": "Result 4",
+              "status": "success"
+            }
+          ],
+          "turnIndex": 4,
+          "contextTokenCount": 12600
+        },
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "Task 5: Handle request 5."
+            },
+            {
+              "role": "assistant",
+              "content": "Completed task 5."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "search",
+              "input": {
+                "query": "important data",
+                "filter": "all"
+              },
+              "output": "No results",
+              "status": "success"
+            },
+            {
+              "name": "search",
+              "input": {
+                "query": "important data",
+                "filter": "all"
+              },
+              "output": "No results",
+              "status": "success"
+            },
+            {
+              "name": "search",
+              "input": {
+                "query": "important data",
+                "filter": "all"
+              },
+              "output": "No results",
+              "status": "success"
+            },
+            {
+              "name": "search",
+              "input": {
+                "query": "important data",
+                "filter": "all"
+              },
+              "output": "No results",
+              "status": "success"
+            }
+          ],
+          "turnIndex": 5,
+          "contextTokenCount": 15000
+        },
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "Task 6: Handle request 6."
+            },
+            {
+              "role": "assistant",
+              "content": "Completed task 6."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "search",
+              "input": {
+                "query": "important data",
+                "filter": "all"
+              },
+              "output": "No results",
+              "status": "success"
+            },
+            {
+              "name": "search",
+              "input": {
+                "query": "important data",
+                "filter": "all"
+              },
+              "output": "No results",
+              "status": "success"
+            },
+            {
+              "name": "search",
+              "input": {
+                "query": "important data",
+                "filter": "all"
+              },
+              "output": "No results",
+              "status": "success"
+            },
+            {
+              "name": "search",
+              "input": {
+                "query": "important data",
+                "filter": "all"
+              },
+              "output": "No results",
+              "status": "success"
+            }
+          ],
+          "turnIndex": 6,
+          "contextTokenCount": 17400
+        },
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "Task 7: Handle request 7."
+            },
+            {
+              "role": "assistant",
+              "content": "Completed task 7."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "search",
+              "input": {
+                "query": "important data",
+                "filter": "all"
+              },
+              "output": "No results",
+              "status": "success"
+            },
+            {
+              "name": "search",
+              "input": {
+                "query": "important data",
+                "filter": "all"
+              },
+              "output": "No results",
+              "status": "success"
+            },
+            {
+              "name": "search",
+              "input": {
+                "query": "important data",
+                "filter": "all"
+              },
+              "output": "No results",
+              "status": "success"
+            },
+            {
+              "name": "search",
+              "input": {
+                "query": "important data",
+                "filter": "all"
+              },
+              "output": "No results",
+              "status": "success"
+            }
+          ],
+          "turnIndex": 7,
+          "contextTokenCount": 19800
+        },
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "Task 8: Handle request 8."
+            },
+            {
+              "role": "assistant",
+              "content": "Completed task 8."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "search",
+              "input": {
+                "query": "important data",
+                "filter": "all"
+              },
+              "output": "No results",
+              "status": "success"
+            },
+            {
+              "name": "search",
+              "input": {
+                "query": "important data",
+                "filter": "all"
+              },
+              "output": "No results",
+              "status": "success"
+            },
+            {
+              "name": "search",
+              "input": {
+                "query": "important data",
+                "filter": "all"
+              },
+              "output": "No results",
+              "status": "success"
+            },
+            {
+              "name": "search",
+              "input": {
+                "query": "important data",
+                "filter": "all"
+              },
+              "output": "No results",
+              "status": "success"
+            }
+          ],
+          "turnIndex": 8,
+          "contextTokenCount": 22200
+        },
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "Task 9: Handle request 9."
+            },
+            {
+              "role": "assistant",
+              "content": "Completed task 9."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "search",
+              "input": {
+                "query": "important data",
+                "filter": "all"
+              },
+              "output": "No results",
+              "status": "success"
+            },
+            {
+              "name": "search",
+              "input": {
+                "query": "important data",
+                "filter": "all"
+              },
+              "output": "No results",
+              "status": "success"
+            },
+            {
+              "name": "search",
+              "input": {
+                "query": "important data",
+                "filter": "all"
+              },
+              "output": "No results",
+              "status": "success"
+            },
+            {
+              "name": "search",
+              "input": {
+                "query": "important data",
+                "filter": "all"
+              },
+              "output": "No results",
+              "status": "success"
+            }
+          ],
+          "turnIndex": 9,
+          "contextTokenCount": 24600
+        },
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "Task 10: Handle request 10."
+            },
+            {
+              "role": "assistant",
+              "content": "Completed task 10."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "search",
+              "input": {
+                "query": "important data",
+                "filter": "all"
+              },
+              "output": "No results",
+              "status": "success"
+            },
+            {
+              "name": "search",
+              "input": {
+                "query": "important data",
+                "filter": "all"
+              },
+              "output": "No results",
+              "status": "success"
+            },
+            {
+              "name": "search",
+              "input": {
+                "query": "important data",
+                "filter": "all"
+              },
+              "output": "No results",
+              "status": "success"
+            },
+            {
+              "name": "search",
+              "input": {
+                "query": "important data",
+                "filter": "all"
+              },
+              "output": "No results",
+              "status": "success"
+            }
+          ],
+          "turnIndex": 10,
+          "contextTokenCount": 27000
+        },
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "Task 11: Handle request 11."
+            },
+            {
+              "role": "assistant",
+              "content": "Completed task 11."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "read_file",
+              "input": {
+                "query": "task 11"
+              },
+              "output": "Result 11",
+              "status": "success"
+            }
+          ],
+          "turnIndex": 11,
+          "contextTokenCount": 29400
+        },
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "Task 12: Handle request 12."
+            },
+            {
+              "role": "assistant",
+              "content": "Completed task 12."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "search",
+              "input": {
+                "query": "task 12"
+              },
+              "output": "Result 12",
+              "status": "success"
+            }
+          ],
+          "turnIndex": 12,
+          "contextTokenCount": 31800
+        },
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "Task 13: Handle request 13."
+            },
+            {
+              "role": "assistant",
+              "content": "Completed task 13."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "read_file",
+              "input": {
+                "query": "task 13"
+              },
+              "output": "Result 13",
+              "status": "success"
+            }
+          ],
+          "turnIndex": 13,
+          "contextTokenCount": 34200
+        },
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "Task 14: Handle request 14."
+            },
+            {
+              "role": "assistant",
+              "content": "Completed task 14."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "search",
+              "input": {
+                "query": "task 14"
+              },
+              "output": "Result 14",
+              "status": "success"
+            }
+          ],
+          "turnIndex": 14,
+          "contextTokenCount": 36600
+        },
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "Task 15: Handle request 15."
+            },
+            {
+              "role": "assistant",
+              "content": "The API returned the data for request 15. Processing complete."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "api_call",
+              "input": {
+                "endpoint": "/data"
+              },
+              "status": "error",
+              "error": "Service unavailable"
+            }
+          ],
+          "turnIndex": 15,
+          "contextTokenCount": 39000
+        },
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "Task 16: Handle request 16."
+            },
+            {
+              "role": "assistant",
+              "content": "The API returned the data for request 16. Processing complete."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "api_call",
+              "input": {
+                "endpoint": "/data"
+              },
+              "status": "error",
+              "error": "Service unavailable"
+            }
+          ],
+          "turnIndex": 16,
+          "contextTokenCount": 41400
+        },
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "Task 17: Handle request 17."
+            },
+            {
+              "role": "assistant",
+              "content": "The API returned the data for request 17. Processing complete."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "api_call",
+              "input": {
+                "endpoint": "/data"
+              },
+              "status": "error",
+              "error": "Service unavailable"
+            }
+          ],
+          "turnIndex": 17,
+          "contextTokenCount": 43800
+        },
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "Task 18: Handle request 18."
+            },
+            {
+              "role": "assistant",
+              "content": "The API returned the data for request 18. Processing complete."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "api_call",
+              "input": {
+                "endpoint": "/data"
+              },
+              "status": "error",
+              "error": "Service unavailable"
+            }
+          ],
+          "turnIndex": 18,
+          "contextTokenCount": 46200
+        },
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "Task 19: Handle request 19."
+            },
+            {
+              "role": "assistant",
+              "content": "Completed task 19."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "read_file",
+              "input": {
+                "query": "task 19"
+              },
+              "output": "Result 19",
+              "status": "success"
+            }
+          ],
+          "turnIndex": 19,
+          "contextTokenCount": 48600
+        },
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "Task 20: Handle request 20."
+            },
+            {
+              "role": "assistant",
+              "content": "Completed task 20."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "search",
+              "input": {
+                "query": "task 20"
+              },
+              "output": "Result 20",
+              "status": "success"
+            }
+          ],
+          "turnIndex": 20,
+          "contextTokenCount": 51000
+        },
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "Task 21: Handle request 21."
+            },
+            {
+              "role": "assistant",
+              "content": "Completed task 21."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "read_file",
+              "input": {
+                "query": "task 21"
+              },
+              "output": "Result 21",
+              "status": "success"
+            }
+          ],
+          "turnIndex": 21,
+          "contextTokenCount": 53400
+        },
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "Task 22: Handle request 22."
+            },
+            {
+              "role": "assistant",
+              "content": "Completed task 22."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "search",
+              "input": {
+                "query": "task 22"
+              },
+              "output": "Result 22",
+              "status": "success"
+            }
+          ],
+          "turnIndex": 22,
+          "contextTokenCount": 55800
+        },
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "Task 23: Handle request 23."
+            },
+            {
+              "role": "assistant",
+              "content": "Completed task 23."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "read_file",
+              "input": {
+                "query": "task 23"
+              },
+              "output": "Result 23",
+              "status": "success"
+            }
+          ],
+          "turnIndex": 23,
+          "contextTokenCount": 58200
+        },
+        {
+          "messages": [
+            {
+              "role": "user",
+              "content": "Task 24: Handle request 24."
+            },
+            {
+              "role": "assistant",
+              "content": "Completed task 24."
+            }
+          ],
+          "tool_calls": [
+            {
+              "name": "search",
+              "input": {
+                "query": "task 24"
+              },
+              "output": "Result 24",
+              "status": "success"
+            }
+          ],
+          "turnIndex": 24,
+          "contextTokenCount": 60600
+        }
+      ]
+    }
+  ]
+}

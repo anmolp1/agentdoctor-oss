@@ -1,0 +1,14 @@
+{
+  "contextErosion": {
+    "growthRateWarning": 200,
+    "growthRateCritical": 1000
+  },
+  "toolThrashing": {
+    "repetitionWarning": 2,
+    "repetitionCritical": 3
+  },
+  "recoveryBlindness": {
+    "maxBlindRetries": 2,
+    "errorRateWarning": 0.1
+  }
+}

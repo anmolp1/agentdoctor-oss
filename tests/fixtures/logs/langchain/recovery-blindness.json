@@ -1,0 +1,530 @@
+{
+  "runs": [
+    {
+      "run_id": "chain-recovery-blindness-001",
+      "parent_run_id": null,
+      "type": "chain",
+      "name": "AgentExecutor",
+      "inputs": {
+        "input": "Read the configuration file.",
+        "messages": [
+          {
+            "role": "system",
+            "content": "You are a DevOps assistant. Use tools to manage deployments and check system health.",
+            "type": "system"
+          }
+        ]
+      },
+      "outputs": {
+        "output": "Working on task 11."
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:30:00Z",
+      "tags": [
+        "agent"
+      ]
+    },
+    {
+      "run_id": "llm-recovery-blindness-001-0",
+      "parent_run_id": "chain-recovery-blindness-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Read the configuration file."
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "I'll read the config file for you."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 1400,
+          "completion_tokens": 200,
+          "total_tokens": 2000
+        }
+      }
+    },
+    {
+      "run_id": "tool-recovery-blindness-001-0-0",
+      "parent_run_id": "llm-recovery-blindness-001-0",
+      "type": "tool",
+      "name": "read_file",
+      "inputs": {
+        "path": "/config.json"
+      },
+      "outputs": {
+        "output": "{\"key\": \"value\"}"
+      },
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-recovery-blindness-001-1",
+      "parent_run_id": "chain-recovery-blindness-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Now read the database config."
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Reading database configuration."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 1750,
+          "completion_tokens": 200,
+          "total_tokens": 2500
+        }
+      }
+    },
+    {
+      "run_id": "tool-recovery-blindness-001-1-0",
+      "parent_run_id": "llm-recovery-blindness-001-1",
+      "type": "tool",
+      "name": "read_file",
+      "inputs": {
+        "path": "/db-config.json"
+      },
+      "outputs": null,
+      "error": "File not found",
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-recovery-blindness-001-2",
+      "parent_run_id": "chain-recovery-blindness-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": []
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "The database configuration shows the connection string is set to localhost:5432."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 2100,
+          "completion_tokens": 200,
+          "total_tokens": 3000
+        }
+      }
+    },
+    {
+      "run_id": "llm-recovery-blindness-001-3",
+      "parent_run_id": "chain-recovery-blindness-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Deploy the application."
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Deploying now."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 2450,
+          "completion_tokens": 200,
+          "total_tokens": 3500
+        }
+      }
+    },
+    {
+      "run_id": "tool-recovery-blindness-001-3-0",
+      "parent_run_id": "llm-recovery-blindness-001-3",
+      "type": "tool",
+      "name": "deploy",
+      "inputs": {
+        "target": "production"
+      },
+      "outputs": null,
+      "error": "Connection refused",
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "tool-recovery-blindness-001-3-1",
+      "parent_run_id": "llm-recovery-blindness-001-3",
+      "type": "tool",
+      "name": "deploy",
+      "inputs": {
+        "target": "production"
+      },
+      "outputs": null,
+      "error": "Connection refused",
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "tool-recovery-blindness-001-3-2",
+      "parent_run_id": "llm-recovery-blindness-001-3",
+      "type": "tool",
+      "name": "deploy",
+      "inputs": {
+        "target": "production"
+      },
+      "outputs": null,
+      "error": "Connection refused",
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-recovery-blindness-001-4",
+      "parent_run_id": "chain-recovery-blindness-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": []
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "I encountered an error deploying. Let me try a different approach."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 2800,
+          "completion_tokens": 200,
+          "total_tokens": 4000
+        }
+      }
+    },
+    {
+      "run_id": "llm-recovery-blindness-001-5",
+      "parent_run_id": "chain-recovery-blindness-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Check the API status."
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Checking API."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 3150,
+          "completion_tokens": 200,
+          "total_tokens": 4500
+        }
+      }
+    },
+    {
+      "run_id": "tool-recovery-blindness-001-5-0",
+      "parent_run_id": "llm-recovery-blindness-001-5",
+      "type": "tool",
+      "name": "api_check",
+      "inputs": {
+        "endpoint": "/health"
+      },
+      "outputs": null,
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-recovery-blindness-001-6",
+      "parent_run_id": "chain-recovery-blindness-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": []
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Unfortunately, the API health check timed out. This could indicate the service is down."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 3500,
+          "completion_tokens": 200,
+          "total_tokens": 5000
+        }
+      }
+    },
+    {
+      "run_id": "llm-recovery-blindness-001-7",
+      "parent_run_id": "chain-recovery-blindness-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Task 7"
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Working on task 7."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 3500,
+          "completion_tokens": 200,
+          "total_tokens": 5000
+        }
+      }
+    },
+    {
+      "run_id": "tool-recovery-blindness-001-7-0",
+      "parent_run_id": "llm-recovery-blindness-001-7",
+      "type": "tool",
+      "name": "api_check",
+      "inputs": {
+        "endpoint": "/task/7"
+      },
+      "outputs": null,
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-recovery-blindness-001-8",
+      "parent_run_id": "chain-recovery-blindness-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Task 8"
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Working on task 8."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 3849,
+          "completion_tokens": 200,
+          "total_tokens": 5500
+        }
+      }
+    },
+    {
+      "run_id": "tool-recovery-blindness-001-8-0",
+      "parent_run_id": "llm-recovery-blindness-001-8",
+      "type": "tool",
+      "name": "api_check",
+      "inputs": {
+        "endpoint": "/task/8"
+      },
+      "outputs": null,
+      "error": "Service unavailable",
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-recovery-blindness-001-9",
+      "parent_run_id": "chain-recovery-blindness-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Task 9"
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Working on task 9."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 4200,
+          "completion_tokens": 200,
+          "total_tokens": 6000
+        }
+      }
+    },
+    {
+      "run_id": "tool-recovery-blindness-001-9-0",
+      "parent_run_id": "llm-recovery-blindness-001-9",
+      "type": "tool",
+      "name": "api_check",
+      "inputs": {
+        "endpoint": "/task/9"
+      },
+      "outputs": null,
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-recovery-blindness-001-10",
+      "parent_run_id": "chain-recovery-blindness-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Task 10"
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Working on task 10."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 4550,
+          "completion_tokens": 200,
+          "total_tokens": 6500
+        }
+      }
+    },
+    {
+      "run_id": "tool-recovery-blindness-001-10-0",
+      "parent_run_id": "llm-recovery-blindness-001-10",
+      "type": "tool",
+      "name": "api_check",
+      "inputs": {
+        "endpoint": "/task/10"
+      },
+      "outputs": null,
+      "error": "Service unavailable",
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    },
+    {
+      "run_id": "llm-recovery-blindness-001-11",
+      "parent_run_id": "chain-recovery-blindness-001",
+      "type": "llm",
+      "name": "ChatOpenAI",
+      "inputs": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Task 11"
+          }
+        ]
+      },
+      "outputs": {
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Working on task 11."
+          }
+        ]
+      },
+      "start_time": "2026-02-22T10:00:00Z",
+      "end_time": "2026-02-22T10:00:05Z",
+      "extra": {
+        "usage": {
+          "prompt_tokens": 4900,
+          "completion_tokens": 200,
+          "total_tokens": 7000
+        }
+      }
+    },
+    {
+      "run_id": "tool-recovery-blindness-001-11-0",
+      "parent_run_id": "llm-recovery-blindness-001-11",
+      "type": "tool",
+      "name": "api_check",
+      "inputs": {
+        "endpoint": "/task/11"
+      },
+      "outputs": null,
+      "error": null,
+      "start_time": "2026-02-22T10:00:01Z",
+      "end_time": "2026-02-22T10:00:02Z"
+    }
+  ]
+}
