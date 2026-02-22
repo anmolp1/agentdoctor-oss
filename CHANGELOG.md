@@ -34,5 +34,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Full TypeScript support with ESM and CJS dual-package exports
 - stdin support for piping logs directly
 
-[Unreleased]: https://github.com/mldeep-systems/agentdoctor/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/mldeep-systems/agentdoctor/releases/tag/v0.1.0
+[Unreleased]: https://github.com/anmolp1/agentdoctor-oss/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/anmolp1/agentdoctor-oss/releases/tag/v0.1.0
