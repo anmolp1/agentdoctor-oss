@@ -55,6 +55,7 @@
   },
   "homepage": "https://github.com/mldeep-systems/agentdoctor",
   "bugs": "https://github.com/mldeep-systems/agentdoctor/issues",
+  "packageManager": "pnpm@9.15.9",
   "engines": {
     "node": ">=20"
   },
