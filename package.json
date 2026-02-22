@@ -51,10 +51,10 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mldeep-systems/agentdoctor"
+    "url": "https://github.com/anmolp1/agentdoctor-oss"
   },
-  "homepage": "https://github.com/mldeep-systems/agentdoctor",
-  "bugs": "https://github.com/mldeep-systems/agentdoctor/issues",
+  "homepage": "https://github.com/anmolp1/agentdoctor-oss",
+  "bugs": "https://github.com/anmolp1/agentdoctor-oss/issues",
   "engines": {
     "node": ">=20"
   },

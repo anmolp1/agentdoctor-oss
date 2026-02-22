@@ -1,5 +1,11 @@
 # AgentDoctor
 
+[![CI](https://github.com/anmolp1/agentdoctor-oss/actions/workflows/ci.yml/badge.svg)](https://github.com/anmolp1/agentdoctor-oss/actions/workflows/ci.yml)
+[![npm version](https://img.shields.io/npm/v/agentdoctor.svg)](https://www.npmjs.com/package/agentdoctor)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Node.js](https://img.shields.io/badge/node-%3E%3D20-brightgreen.svg)](https://nodejs.org/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
+
 **Diagnose your AI agents before they silently fail.**
 
 AgentDoctor is a TypeScript library and CLI tool for AI agent health diagnostics. It analyzes agent log files to detect pathologies -- recurring failure patterns that degrade agent performance over time -- and computes a composite health score. It runs entirely locally, requires zero external services, and produces fully deterministic results.

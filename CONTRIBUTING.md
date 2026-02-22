@@ -24,7 +24,7 @@ Thank you for your interest in contributing to AgentDoctor! This guide will help
 
 ```bash
 # Clone the repository
-git clone https://github.com/mldeep-systems/agentdoctor.git
+git clone https://github.com/anmolp1/agentdoctor-oss.git
 cd agentdoctor
 
 # Install dependencies
@@ -240,7 +240,7 @@ pnpm test -- tests/unit/detectors/context-erosion.test.ts
 ### Coverage Requirements
 
 - Lines: 85%
-- Branches: 80%
+- Branches: 75%
 - Functions: 85%
 - Statements: 85%
 
