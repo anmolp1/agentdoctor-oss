@@ -174,9 +174,7 @@ describe("RecoveryBlindnessDetector", () => {
     const findings = detector.detect(bundle, config);
 
     const untestedFinding = findings.find(
-      (f) =>
-        f.pathology === Pathology.RecoveryBlindness &&
-        f.title.includes("recovery untested"),
+      (f) => f.pathology === Pathology.RecoveryBlindness && f.title.includes("recovery untested"),
     );
     expect(untestedFinding).toBeDefined();
     expect(untestedFinding!.severity).toBe(Severity.Info);
@@ -228,7 +226,10 @@ describe("RecoveryBlindnessDetector", () => {
         ],
         messages: [
           makeMessage({ role: Role.User, content: "Get users." }),
-          makeMessage({ role: Role.Assistant, content: "The API had an error again, using backup." }),
+          makeMessage({
+            role: Role.Assistant,
+            content: "The API had an error again, using backup.",
+          }),
         ],
       }),
       makeTurn({
@@ -250,7 +251,10 @@ describe("RecoveryBlindnessDetector", () => {
         ],
         messages: [
           makeMessage({ role: Role.User, content: "Check status." }),
-          makeMessage({ role: Role.Assistant, content: "Unfortunately the primary API failed, using fallback." }),
+          makeMessage({
+            role: Role.Assistant,
+            content: "Unfortunately the primary API failed, using fallback.",
+          }),
         ],
       }),
       makeTurn({

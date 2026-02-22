@@ -8,12 +8,62 @@ export function truncate(text: string, maxLength: number): string {
 
 /** Common English words to filter out from tool name extraction. */
 const STOP_WORDS = new Set([
-  "the", "a", "an", "and", "or", "but", "in", "on", "at", "to", "for",
-  "of", "with", "by", "from", "it", "is", "are", "was", "were", "be",
-  "been", "has", "have", "had", "do", "does", "did", "will", "would",
-  "could", "should", "may", "might", "can", "this", "that", "these",
-  "those", "not", "no", "if", "then", "else", "when", "where", "how",
-  "all", "each", "every", "any", "some", "your", "my", "our", "their",
+  "the",
+  "a",
+  "an",
+  "and",
+  "or",
+  "but",
+  "in",
+  "on",
+  "at",
+  "to",
+  "for",
+  "of",
+  "with",
+  "by",
+  "from",
+  "it",
+  "is",
+  "are",
+  "was",
+  "were",
+  "be",
+  "been",
+  "has",
+  "have",
+  "had",
+  "do",
+  "does",
+  "did",
+  "will",
+  "would",
+  "could",
+  "should",
+  "may",
+  "might",
+  "can",
+  "this",
+  "that",
+  "these",
+  "those",
+  "not",
+  "no",
+  "if",
+  "then",
+  "else",
+  "when",
+  "where",
+  "how",
+  "all",
+  "each",
+  "every",
+  "any",
+  "some",
+  "your",
+  "my",
+  "our",
+  "their",
 ]);
 
 /** Extract tool names referenced in text (backtick-wrapped or "use the X tool" patterns). */
@@ -30,7 +80,8 @@ export function extractToolReferences(text: string): Set<string> {
   }
 
   // Match "use the X tool", "call X tool" patterns — require "tool" suffix to reduce false positives
-  const phrasePattern = /(?:use|call|invoke|run|execute)\s+(?:the\s+)?([a-zA-Z_]\w[\w-]*?)\s+tool\b/gi;
+  const phrasePattern =
+    /(?:use|call|invoke|run|execute)\s+(?:the\s+)?([a-zA-Z_]\w[\w-]*?)\s+tool\b/gi;
   while ((match = phrasePattern.exec(text)) !== null) {
     if (match[1] && !STOP_WORDS.has(match[1].toLowerCase())) {
       refs.add(match[1]);

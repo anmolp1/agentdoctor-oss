@@ -88,9 +88,7 @@ export function registerCheckCommand(program: Command): void {
         const hasCritical = result.diagnostics.findings.some(
           (f) => f.severity === Severity.Critical,
         );
-        const hasWarning = result.diagnostics.findings.some(
-          (f) => f.severity === Severity.Warning,
-        );
+        const hasWarning = result.diagnostics.findings.some((f) => f.severity === Severity.Warning);
 
         if (hasCritical) {
           process.exit(2);

@@ -26,7 +26,8 @@ describe("HallucinatedSuccessDetector", () => {
           makeMessage({ role: Role.User, content: "Fetch the data from the API." }),
           makeMessage({
             role: Role.Assistant,
-            content: "I have successfully retrieved the data. Here are the 42 records from the database.",
+            content:
+              "I have successfully retrieved the data. Here are the 42 records from the database.",
           }),
         ],
       }),

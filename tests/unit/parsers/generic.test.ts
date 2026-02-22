@@ -276,9 +276,7 @@ describe("GenericParser", () => {
     });
 
     it("throws on malformed JSON", () => {
-      expect(() => parser.parse("test.json", "not valid json{{{")).toThrow(
-        "Malformed JSON",
-      );
+      expect(() => parser.parse("test.json", "not valid json{{{")).toThrow("Malformed JSON");
     });
 
     it("includes session metadata with source file", () => {

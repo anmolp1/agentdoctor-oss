@@ -1,6 +1,12 @@
 /** Test factories and shared utilities. */
 
-import type { AgentSession, Turn, Message, ToolCall, AgentLogBundle, ToolSchema } from "../src/models/canonical.js";
+import type {
+  AgentSession,
+  Turn,
+  Message,
+  ToolCall,
+  AgentLogBundle,
+} from "../src/models/canonical.js";
 import { Role, ToolCallStatus } from "../src/models/canonical.js";
 import type { Finding, DiagnosticResult } from "../src/models/findings.js";
 import { Pathology, Severity } from "../src/models/findings.js";
@@ -29,7 +35,10 @@ export function makeToolCall(overrides: Partial<ToolCall> = {}): ToolCall {
 /** Create a basic turn. */
 export function makeTurn(overrides: Partial<Turn> & { turnIndex?: number } = {}): Turn {
   return {
-    messages: [makeMessage({ role: Role.User }), makeMessage({ role: Role.Assistant, content: "Response" })],
+    messages: [
+      makeMessage({ role: Role.User }),
+      makeMessage({ role: Role.Assistant, content: "Response" }),
+    ],
     toolCalls: [],
     turnIndex: 0,
     ...overrides,

@@ -141,8 +141,7 @@ export class ContextErosionDetector implements BaseDetector {
 
     const evidence: Evidence[] = [
       {
-        description:
-          `Instruction share declined from ${(startShare * 100).toFixed(1)}% to ${(endShare * 100).toFixed(1)}%`,
+        description: `Instruction share declined from ${(startShare * 100).toFixed(1)}% to ${(endShare * 100).toFixed(1)}%`,
         turnIndex: turns[turns.length - 1]!.turnIndex,
         sessionId,
         rawData: {
@@ -211,7 +210,12 @@ export class ContextErosionDetector implements BaseDetector {
         {
           description: `Stale content ratio: ${(staleRatio * 100).toFixed(1)}%`,
           sessionId,
-          rawData: { staleRatio, tokensAtLookback, totalTokens, lookbackTurns: cfg.staleTurnLookback },
+          rawData: {
+            staleRatio,
+            tokensAtLookback,
+            totalTokens,
+            lookbackTurns: cfg.staleTurnLookback,
+          },
         },
       ],
       recommendation:

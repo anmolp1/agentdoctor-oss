@@ -1,10 +1,4 @@
-export {
-  Role,
-  ToolCallStatus,
-  totalTurns,
-  totalToolCalls,
-  totalMessages,
-} from "./canonical.js";
+export { Role, ToolCallStatus, totalTurns, totalToolCalls, totalMessages } from "./canonical.js";
 export type {
   Message,
   ToolCall,
@@ -26,9 +20,5 @@ export type { Finding, Evidence, DiagnosticResult } from "./findings.js";
 export { gradeFromScore } from "./scores.js";
 export type { HealthScore, LayerScore, Grade } from "./scores.js";
 
-export {
-  AgentDoctorConfigSchema,
-  loadConfig,
-  getDefaultConfig,
-} from "./config.js";
+export { AgentDoctorConfigSchema, loadConfig, getDefaultConfig } from "./config.js";
 export type { AgentDoctorConfig } from "./config.js";

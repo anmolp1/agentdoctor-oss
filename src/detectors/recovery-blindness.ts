@@ -3,7 +3,7 @@
 import type { BaseDetector } from "./base.js";
 import type { AgentLogBundle, ToolCall, Turn } from "../models/canonical.js";
 import type { AgentDoctorConfig } from "../models/config.js";
-import type { Finding, Evidence } from "../models/findings.js";
+import type { Finding } from "../models/findings.js";
 import { Pathology, Severity } from "../models/findings.js";
 import { ToolCallStatus, Role } from "../models/canonical.js";
 import { containsKeywords } from "../utils/text.js";
@@ -83,10 +83,7 @@ export class RecoveryBlindnessDetector implements BaseDetector {
 
       for (let ci = 0; ci < turn.toolCalls.length; ci++) {
         const call = turn.toolCalls[ci]!;
-        if (
-          call.status !== ToolCallStatus.Error &&
-          call.status !== ToolCallStatus.Timeout
-        ) {
+        if (call.status !== ToolCallStatus.Error && call.status !== ToolCallStatus.Timeout) {
           continue;
         }
 

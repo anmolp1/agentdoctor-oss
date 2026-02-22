@@ -35,9 +35,7 @@ describe("Pipeline integration", () => {
         outputFormat: "markdown",
       });
 
-      const pathologies = new Set(
-        result.diagnostics.findings.map((f) => f.pathology),
-      );
+      const pathologies = new Set(result.diagnostics.findings.map((f) => f.pathology));
       expect(pathologies.has(Pathology.ContextErosion)).toBe(true);
       expect(result.healthScore.overallScore).toBeLessThan(70);
     });
@@ -72,9 +70,7 @@ describe("Pipeline integration", () => {
         outputFormat: "markdown",
       });
 
-      const detected = new Set(
-        result.diagnostics.findings.map((f) => f.pathology),
-      );
+      const detected = new Set(result.diagnostics.findings.map((f) => f.pathology));
 
       // Multi-pathology fixture should trigger findings from multiple pathology types
       expect(detected.size).toBeGreaterThanOrEqual(2);
@@ -142,13 +138,11 @@ describe("Pipeline integration", () => {
 
   describe("custom config", () => {
     it("propagates strict thresholds to detectors", async () => {
-      const configPath = path.resolve(
-        __dirname,
-        "../fixtures/configs/strict.json",
-      );
-      const strictConfig = JSON.parse(
-        fs.readFileSync(configPath, "utf-8"),
-      ) as Record<string, unknown>;
+      const configPath = path.resolve(__dirname, "../fixtures/configs/strict.json");
+      const strictConfig = JSON.parse(fs.readFileSync(configPath, "utf-8")) as Record<
+        string,
+        unknown
+      >;
 
       // Strict config lowers thresholds, so a session that might be borderline
       // under defaults should produce more findings under strict config

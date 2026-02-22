@@ -1,4 +1,10 @@
-import { isMonotonic, monotonicIncreasingRatio, trendDirection, average, linearScore } from "../../../src/utils/statistics.js";
+import {
+  isMonotonic,
+  monotonicIncreasingRatio,
+  trendDirection,
+  average,
+  linearScore,
+} from "../../../src/utils/statistics.js";
 
 // ---------------------------------------------------------------------------
 // monotonicIncreasingRatio

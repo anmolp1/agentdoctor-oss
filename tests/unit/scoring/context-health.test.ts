@@ -8,11 +8,7 @@ describe("computeContextHealth", () => {
   it("returns null when no token data", () => {
     // Turns without contextTokenCount
     const session = makeSession({
-      turns: [
-        makeTurn({ turnIndex: 0 }),
-        makeTurn({ turnIndex: 1 }),
-        makeTurn({ turnIndex: 2 }),
-      ],
+      turns: [makeTurn({ turnIndex: 0 }), makeTurn({ turnIndex: 1 }), makeTurn({ turnIndex: 2 })],
     });
     const bundle = makeBundle([session]);
     const result = computeContextHealth(bundle, config);
@@ -37,7 +33,10 @@ describe("computeContextHealth", () => {
     // Long system prompt to ensure high instruction share (>15% of context)
     const session = makeSession({
       turns,
-      systemPrompt: "You are a helpful assistant that helps users with many different tasks across domains. ".repeat(25),
+      systemPrompt:
+        "You are a helpful assistant that helps users with many different tasks across domains. ".repeat(
+          25,
+        ),
     });
     const bundle = makeBundle([session]);
     const result = computeContextHealth(bundle, config);

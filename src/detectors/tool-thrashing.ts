@@ -57,10 +57,7 @@ export class ToolThrashingDetector implements BaseDetector {
       // Check input similarity among same-tool calls
       let similarCount = 0;
       for (let j = 1; j < sameTool.length; j++) {
-        const sim = inputSimilarity(
-          sameTool[0]!.call.toolInput,
-          sameTool[j]!.call.toolInput,
-        );
+        const sim = inputSimilarity(sameTool[0]!.call.toolInput, sameTool[j]!.call.toolInput);
         if (sim >= cfg.inputSimilarityThreshold) similarCount++;
       }
 
@@ -68,9 +65,7 @@ export class ToolThrashingDetector implements BaseDetector {
       if (similarCount < sameTool.length - 1) continue;
 
       const severity =
-        sameTool.length >= cfg.repetitionCritical
-          ? Severity.Critical
-          : Severity.Warning;
+        sameTool.length >= cfg.repetitionCritical ? Severity.Critical : Severity.Warning;
 
       const evidence: Evidence[] = sameTool.map((tc) => ({
         description: `${tc.call.toolName}(${truncate(JSON.stringify(tc.call.toolInput), 200)})`,
@@ -136,17 +131,13 @@ export class ToolThrashingDetector implements BaseDetector {
         if (cycles < cfg.oscillationMinCycles) continue;
 
         const severity =
-          cycles >= cfg.oscillationCriticalCycles
-            ? Severity.Critical
-            : Severity.Warning;
+          cycles >= cfg.oscillationCriticalCycles ? Severity.Critical : Severity.Warning;
 
         const patternStr = pattern.join(" → ");
 
         // Avoid duplicates
         const alreadyFound = findings.some(
-          (f) =>
-            f.pathology === Pathology.ToolThrashing &&
-            f.title.includes("oscillation"),
+          (f) => f.pathology === Pathology.ToolThrashing && f.title.includes("oscillation"),
         );
         if (alreadyFound) continue;
 

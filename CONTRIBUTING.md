@@ -44,19 +44,19 @@ pnpm run format:check
 
 ### Available Scripts
 
-| Command | Description |
-|---|---|
-| `pnpm run build` | Build the project with tsup |
-| `pnpm run dev` | Build in watch mode |
-| `pnpm run lint` | Run ESLint on src/ and tests/ |
-| `pnpm run lint:fix` | Run ESLint with auto-fix |
-| `pnpm run format` | Format code with Prettier |
-| `pnpm run format:check` | Check code formatting |
-| `pnpm run typecheck` | Run TypeScript type checking |
-| `pnpm test` | Run tests in watch mode |
-| `pnpm run test:ci` | Run tests once with coverage |
-| `pnpm run test:regression` | Run regression tests |
-| `pnpm run generate-fixtures` | Generate test fixtures |
+| Command                      | Description                   |
+| ---------------------------- | ----------------------------- |
+| `pnpm run build`             | Build the project with tsup   |
+| `pnpm run dev`               | Build in watch mode           |
+| `pnpm run lint`              | Run ESLint on src/ and tests/ |
+| `pnpm run lint:fix`          | Run ESLint with auto-fix      |
+| `pnpm run format`            | Format code with Prettier     |
+| `pnpm run format:check`      | Check code formatting         |
+| `pnpm run typecheck`         | Run TypeScript type checking  |
+| `pnpm test`                  | Run tests in watch mode       |
+| `pnpm run test:ci`           | Run tests once with coverage  |
+| `pnpm run test:regression`   | Run regression tests          |
+| `pnpm run generate-fixtures` | Generate test fixtures        |
 
 ## Project Structure
 
@@ -130,7 +130,7 @@ import { MyFrameworkParser } from "./my-framework.js";
 const PARSER_REGISTRY: BaseParser[] = [
   new LangChainParser(),
   new OpenAIParser(),
-  new MyFrameworkParser(),  // Add before GenericParser
+  new MyFrameworkParser(), // Add before GenericParser
   new GenericParser(),
 ];
 ```
@@ -213,6 +213,7 @@ export function getAllDetectors(): BaseDetector[] {
 ### 5. Add tests
 
 Create tests in `tests/unit/detectors/` covering:
+
 - Detection with synthetic sessions that exhibit the pathology
 - No false positives on clean sessions
 - Severity thresholds (warning vs. critical)
@@ -279,6 +280,7 @@ pnpm run typecheck
 We welcome contributions in these areas:
 
 ### New Parsers
+
 - **AutoGen** -- Microsoft's multi-agent framework
 - **CrewAI** -- Role-based multi-agent orchestration
 - **Amazon Bedrock Agents** -- AWS agent logs
@@ -286,21 +288,25 @@ We welcome contributions in these areas:
 - **Custom JSONL** -- Structured JSONL with minimal required fields
 
 ### New Detectors / Pathologies
+
 - **Prompt Echo Loop** -- Agent repeats back instructions verbatim instead of acting
 - **Goal Decomposition Failure** -- Agent cannot break complex goals into sub-tasks
 - **Authority Confusion** -- Multi-agent setups where agents override each other
 - **Token Budget Exhaustion** -- Agent runs out of output tokens mid-response
 
 ### Scoring Layers
+
 - **Recovery Robustness** -- How well the agent handles and recovers from errors
 - **Output Quality Baselines** -- Track output quality metrics over time
 
 ### Tooling
+
 - VS Code extension for inline diagnostics
 - GitHub Action for automated PR checks
 - Dashboard / visualization for health scores over time
 
 ### Documentation
+
 - Video tutorials and walkthroughs
 - Integration guides for popular observability platforms
 - Benchmark datasets for pathology detection accuracy

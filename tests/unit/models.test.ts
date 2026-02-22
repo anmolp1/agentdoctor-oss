@@ -1,8 +1,21 @@
 import { gradeFromScore } from "../../src/models/scores.js";
-import { criticalCount, warningCount, pathologiesDetected, Pathology, Severity } from "../../src/models/findings.js";
+import {
+  criticalCount,
+  warningCount,
+  pathologiesDetected,
+  Pathology,
+  Severity,
+} from "../../src/models/findings.js";
 import { totalTurns, totalToolCalls, totalMessages } from "../../src/models/canonical.js";
-import { makeFinding, makeDiagnosticResult, makeSession, makeTurn, makeToolCall, makeMessage } from "../helpers.js";
-import { Role, ToolCallStatus } from "../../src/models/canonical.js";
+import {
+  makeFinding,
+  makeDiagnosticResult,
+  makeSession,
+  makeTurn,
+  makeToolCall,
+  makeMessage,
+} from "../helpers.js";
+import { Role } from "../../src/models/canonical.js";
 
 // ---------------------------------------------------------------------------
 // gradeFromScore
@@ -112,11 +125,7 @@ describe("pathologiesDetected", () => {
 describe("totalTurns", () => {
   it("counts turns in a session", () => {
     const session = makeSession({
-      turns: [
-        makeTurn({ turnIndex: 0 }),
-        makeTurn({ turnIndex: 1 }),
-        makeTurn({ turnIndex: 2 }),
-      ],
+      turns: [makeTurn({ turnIndex: 0 }), makeTurn({ turnIndex: 1 }), makeTurn({ turnIndex: 2 })],
     });
     expect(totalTurns(session)).toBe(3);
   });

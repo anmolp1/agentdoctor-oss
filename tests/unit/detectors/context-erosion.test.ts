@@ -2,7 +2,6 @@ import { ContextErosionDetector } from "../../../src/detectors/context-erosion.j
 import { getDefaultConfig } from "../../../src/models/config.js";
 import { makeSession, makeBundle, makeTurn } from "../../helpers.js";
 import { Pathology, Severity } from "../../../src/models/findings.js";
-import { Role, ToolCallStatus } from "../../../src/models/canonical.js";
 import { loadConfig } from "../../../src/models/config.js";
 
 describe("ContextErosionDetector", () => {
@@ -167,9 +166,7 @@ describe("ContextErosionDetector", () => {
   });
 
   it("returns empty when no token counts available", () => {
-    const turns = Array.from({ length: 10 }, (_, i) =>
-      makeTurn({ turnIndex: i }),
-    );
+    const turns = Array.from({ length: 10 }, (_, i) => makeTurn({ turnIndex: i }));
 
     const bundle = makeBundle([
       makeSession({

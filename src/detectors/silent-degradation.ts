@@ -53,8 +53,7 @@ export class SilentDegradationDetector implements BaseDetector {
       lastMetrics.toolSuccessRate < firstMetrics.toolSuccessRate
     ) {
       const drop =
-        (firstMetrics.toolSuccessRate - lastMetrics.toolSuccessRate) /
-        firstMetrics.toolSuccessRate;
+        (firstMetrics.toolSuccessRate - lastMetrics.toolSuccessRate) / firstMetrics.toolSuccessRate;
       if (drop > cfg.withinSessionDropThreshold) {
         declines.push(
           `Tool success rate dropped from ${(firstMetrics.toolSuccessRate * 100).toFixed(0)}% to ${(lastMetrics.toolSuccessRate * 100).toFixed(0)}%`,
@@ -159,7 +158,10 @@ export class SilentDegradationDetector implements BaseDetector {
         evidence: [
           {
             description: `Pathologies detected: ${[...uniquePathologies].join(", ")}`,
-            rawData: { pathologyCount: uniquePathologies.size, pathologies: [...uniquePathologies] },
+            rawData: {
+              pathologyCount: uniquePathologies.size,
+              pathologies: [...uniquePathologies],
+            },
           },
         ],
         recommendation:

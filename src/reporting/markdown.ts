@@ -37,15 +37,9 @@ function renderHeader(data: ReportData): string {
 
 function renderExecutiveSummary(data: ReportData): string {
   const { healthScore, diagnostics } = data;
-  const criticals = diagnostics.findings.filter(
-    (f) => f.severity === Severity.Critical,
-  ).length;
-  const warnings = diagnostics.findings.filter(
-    (f) => f.severity === Severity.Warning,
-  ).length;
-  const infos = diagnostics.findings.filter(
-    (f) => f.severity === Severity.Info,
-  ).length;
+  const criticals = diagnostics.findings.filter((f) => f.severity === Severity.Critical).length;
+  const warnings = diagnostics.findings.filter((f) => f.severity === Severity.Warning).length;
+  const infos = diagnostics.findings.filter((f) => f.severity === Severity.Info).length;
 
   return `## Executive Summary
 
@@ -142,7 +136,7 @@ function renderFindings(diagnostics: DiagnosticResult): string {
   return section;
 }
 
-function renderUnassessed(healthScore: HealthScore): string {
+function renderUnassessed(_healthScore: HealthScore): string {
   return `## What This Analysis Could Not Assess
 
 - **Recovery Robustness** — requires simulated tool failures
@@ -215,7 +209,6 @@ function severityBadge(severity: Severity): string {
 function renderScoreBar(score: number): string {
   const filled = Math.round(score / 10);
   const empty = 10 - filled;
-  const grade =
-    score >= 90 ? "A" : score >= 80 ? "B" : score >= 70 ? "C" : score >= 60 ? "D" : "F";
+  const grade = score >= 90 ? "A" : score >= 80 ? "B" : score >= 70 ? "C" : score >= 60 ? "D" : "F";
   return `${"█".repeat(filled)}${"░".repeat(empty)} ${score}/100 (${grade})`;
 }

@@ -1,14 +1,17 @@
 import { computeToolReliability } from "../../../src/scoring/tool-reliability.js";
-import { makeDiagnosticResult, makeBundle, makeSession, makeTurn, makeToolCall } from "../../helpers.js";
+import {
+  makeDiagnosticResult,
+  makeBundle,
+  makeSession,
+  makeTurn,
+  makeToolCall,
+} from "../../helpers.js";
 import { ToolCallStatus } from "../../../src/models/canonical.js";
 
 describe("computeToolReliability", () => {
   it("returns null when no tool calls", () => {
     const session = makeSession({
-      turns: [
-        makeTurn({ turnIndex: 0, toolCalls: [] }),
-        makeTurn({ turnIndex: 1, toolCalls: [] }),
-      ],
+      turns: [makeTurn({ turnIndex: 0, toolCalls: [] }), makeTurn({ turnIndex: 1, toolCalls: [] })],
     });
     const bundle = makeBundle([session]);
     const diagnostics = makeDiagnosticResult([]);

@@ -11,9 +11,7 @@ export class GenericParser implements BaseParser {
   canParse(_filePath: string, sample: string): boolean {
     // Fallback: requires JSON with "messages", "turns", or "events" array
     return (
-      sample.includes('"messages"') ||
-      sample.includes('"turns"') ||
-      sample.includes('"events"')
+      sample.includes('"messages"') || sample.includes('"turns"') || sample.includes('"events"')
     );
   }
 
@@ -36,14 +34,10 @@ export class GenericParser implements BaseParser {
         typeof parsed[0] === "object" &&
         ("turns" in parsed[0] || "messages" in parsed[0])
       ) {
-        return parsed.map((s, i) =>
-          this.buildSession(s as Record<string, unknown>, filePath, i),
-        );
+        return parsed.map((s, i) => this.buildSession(s as Record<string, unknown>, filePath, i));
       }
       // Single session with messages array
-      return [
-        this.buildSession({ messages: parsed }, filePath, 0),
-      ];
+      return [this.buildSession({ messages: parsed }, filePath, 0)];
     }
 
     if (parsed && typeof parsed === "object") {
@@ -67,9 +61,7 @@ export class GenericParser implements BaseParser {
     sessionIndex: number,
   ): AgentSession {
     const sessionId =
-      (data.session_id as string) ??
-      (data.sessionId as string) ??
-      `generic-${sessionIndex}`;
+      (data.session_id as string) ?? (data.sessionId as string) ?? `generic-${sessionIndex}`;
 
     let systemPrompt: string | undefined;
     const toolSchemas: ToolSchema[] = [];
@@ -90,10 +82,7 @@ export class GenericParser implements BaseParser {
 
     // Extract system prompt if not found yet
     if (!systemPrompt) {
-      systemPrompt =
-        (data.system_prompt as string) ??
-        (data.systemPrompt as string) ??
-        undefined;
+      systemPrompt = (data.system_prompt as string) ?? (data.systemPrompt as string) ?? undefined;
     }
 
     // Extract tool schemas
@@ -168,7 +157,10 @@ export class GenericParser implements BaseParser {
         messages,
         toolCalls,
         turnIndex: (td.turnIndex as number) ?? (td.turn_index as number) ?? i,
-        contextTokenCount: (td.contextTokenCount as number) ?? (td.context_token_count as number) ?? cumulativeTokens,
+        contextTokenCount:
+          (td.contextTokenCount as number) ??
+          (td.context_token_count as number) ??
+          cumulativeTokens,
         timestamp: td.timestamp as string | undefined,
       });
     }
@@ -176,9 +168,10 @@ export class GenericParser implements BaseParser {
     return turns;
   }
 
-  private messagesToTurns(
-    messagesData: Record<string, unknown>[],
-  ): { turns: Turn[]; systemPrompt?: string } {
+  private messagesToTurns(messagesData: Record<string, unknown>[]): {
+    turns: Turn[];
+    systemPrompt?: string;
+  } {
     const turns: Turn[] = [];
     let systemPrompt: string | undefined;
     let currentTurnMessages: Message[] = [];
@@ -290,7 +283,8 @@ export class GenericParser implements BaseParser {
         string,
         unknown
       >,
-      toolOutput: tc.output != null ? String(tc.output ?? tc.toolOutput ?? tc.tool_output) : undefined,
+      toolOutput:
+        tc.output != null ? String(tc.output ?? tc.toolOutput ?? tc.tool_output) : undefined,
       status: this.mapToolStatus(tc.status),
       errorMessage: tc.error as string | undefined,
       retryCount: (tc.retryCount as number) ?? (tc.retry_count as number) ?? 0,

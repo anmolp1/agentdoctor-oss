@@ -37,7 +37,12 @@ export class InstructionDriftDetector implements BaseDetector {
 
       // Rule 1: Tool reference mismatch
       if (cfg.checkToolReferences) {
-        this.detectToolMismatch(session.sessionId, session.systemPrompt, session.toolSchemas, findings);
+        this.detectToolMismatch(
+          session.sessionId,
+          session.systemPrompt,
+          session.toolSchemas,
+          findings,
+        );
       }
 
       // Rule 2: Contradictory directives
@@ -111,11 +116,7 @@ export class InstructionDriftDetector implements BaseDetector {
     }
   }
 
-  private detectContradictions(
-    sessionId: string,
-    systemPrompt: string,
-    findings: Finding[],
-  ): void {
+  private detectContradictions(sessionId: string, systemPrompt: string, findings: Finding[]): void {
     const directives = extractDirectives(systemPrompt);
     if (directives.length < 2) return;
 

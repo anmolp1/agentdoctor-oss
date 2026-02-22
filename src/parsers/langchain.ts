@@ -68,16 +68,12 @@ export class LangChainParser implements BaseParser {
 
     // Group by run_id for multi-session support
     const sessionGroups = this.groupBySession(runs);
-    return sessionGroups.map((group, idx) =>
-      this.buildSession(group, filePath, idx),
-    );
+    return sessionGroups.map((group, idx) => this.buildSession(group, filePath, idx));
   }
 
   private groupBySession(runs: LangChainRun[]): LangChainRun[][] {
     // Find top-level runs (no parent_run_id or parent_run_id is null)
-    const topLevel = runs.filter(
-      (r) => !r.parent_run_id || r.parent_run_id === null,
-    );
+    const topLevel = runs.filter((r) => !r.parent_run_id || r.parent_run_id === null);
 
     if (topLevel.length === 0) {
       // All runs are one session
@@ -104,11 +100,7 @@ export class LangChainParser implements BaseParser {
     return result.length > 0 ? result : [runs];
   }
 
-  private buildSession(
-    runs: LangChainRun[],
-    filePath: string,
-    sessionIndex: number,
-  ): AgentSession {
+  private buildSession(runs: LangChainRun[], filePath: string, sessionIndex: number): AgentSession {
     const turns: Turn[] = [];
     let systemPrompt: string | undefined;
     const toolSchemas: ToolSchema[] = [];
@@ -244,9 +236,7 @@ export class LangChainParser implements BaseParser {
     if (messages.length === 0) {
       if (run.inputs) {
         const content =
-          typeof run.inputs.input === "string"
-            ? run.inputs.input
-            : JSON.stringify(run.inputs);
+          typeof run.inputs.input === "string" ? run.inputs.input : JSON.stringify(run.inputs);
         messages.push({
           role: Role.User,
           content,
@@ -255,9 +245,7 @@ export class LangChainParser implements BaseParser {
       }
       if (run.outputs) {
         const content =
-          typeof run.outputs.output === "string"
-            ? run.outputs.output
-            : JSON.stringify(run.outputs);
+          typeof run.outputs.output === "string" ? run.outputs.output : JSON.stringify(run.outputs);
         messages.push({
           role: Role.Assistant,
           content,
@@ -269,9 +257,7 @@ export class LangChainParser implements BaseParser {
     return messages;
   }
 
-  private extractMessagesFromData(
-    data: Record<string, unknown> | undefined,
-  ): Message[] {
+  private extractMessagesFromData(data: Record<string, unknown> | undefined): Message[] {
     if (!data) return [];
     const messages: Message[] = [];
 
@@ -280,15 +266,12 @@ export class LangChainParser implements BaseParser {
       for (const msg of msgArray) {
         if (msg && typeof msg === "object" && "content" in msg) {
           const role = this.mapRole(
-            (msg as Record<string, unknown>).role ??
-              (msg as Record<string, unknown>).type,
+            (msg as Record<string, unknown>).role ?? (msg as Record<string, unknown>).type,
           );
           messages.push({
             role,
             content: String((msg as Record<string, unknown>).content),
-            timestamp: (msg as Record<string, unknown>).timestamp as
-              | string
-              | undefined,
+            timestamp: (msg as Record<string, unknown>).timestamp as string | undefined,
           });
         }
       }
@@ -297,27 +280,18 @@ export class LangChainParser implements BaseParser {
     return messages;
   }
 
-  private extractToolCalls(
-    llmRun: LangChainRun,
-    toolRuns: LangChainRun[],
-  ): ToolCall[] {
+  private extractToolCalls(llmRun: LangChainRun, toolRuns: LangChainRun[]): ToolCall[] {
     const toolCalls: ToolCall[] = [];
 
     // Get associated tool runs
-    const associatedTools = toolRuns.filter(
-      (t) => t.parent_run_id === llmRun.run_id,
-    );
+    const associatedTools = toolRuns.filter((t) => t.parent_run_id === llmRun.run_id);
 
     for (const toolRun of associatedTools) {
       toolCalls.push({
         toolName: toolRun.name ?? "unknown",
         toolInput: (toolRun.inputs as Record<string, unknown>) ?? {},
-        toolOutput: toolRun.outputs
-          ? JSON.stringify(toolRun.outputs)
-          : undefined,
-        status: toolRun.error
-          ? ToolCallStatus.Error
-          : ToolCallStatus.Success,
+        toolOutput: toolRun.outputs ? JSON.stringify(toolRun.outputs) : undefined,
+        status: toolRun.error ? ToolCallStatus.Error : ToolCallStatus.Success,
         errorMessage: toolRun.error ?? undefined,
         retryCount: 0,
         timestamp: toolRun.start_time,

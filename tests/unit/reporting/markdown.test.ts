@@ -1,7 +1,6 @@
 import { renderMarkdown } from "../../../src/reporting/markdown.js";
 import { makeDiagnosticResult, makeFinding } from "../../helpers.js";
 import { Severity, Pathology } from "../../../src/models/findings.js";
-import { gradeFromScore } from "../../../src/models/scores.js";
 
 describe("renderMarkdown", () => {
   const healthScore = {
@@ -14,9 +13,7 @@ describe("renderMarkdown", () => {
   };
 
   it("contains all 6 sections", () => {
-    const diagnostics = makeDiagnosticResult([
-      makeFinding({ severity: Severity.Warning }),
-    ]);
+    const diagnostics = makeDiagnosticResult([makeFinding({ severity: Severity.Warning })]);
     const md = renderMarkdown({
       diagnostics,
       healthScore,

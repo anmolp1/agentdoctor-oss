@@ -27,19 +27,13 @@ export function colorSeverity(severity: Severity): string {
 
 /** Print a summary to stdout. */
 export function printSummary(healthScore: HealthScore, diagnostics: DiagnosticResult): void {
-  const criticals = diagnostics.findings.filter(
-    (f) => f.severity === Severity.Critical,
-  ).length;
-  const warnings = diagnostics.findings.filter(
-    (f) => f.severity === Severity.Warning,
-  ).length;
+  const criticals = diagnostics.findings.filter((f) => f.severity === Severity.Critical).length;
+  const warnings = diagnostics.findings.filter((f) => f.severity === Severity.Warning).length;
 
   // eslint-disable-next-line no-console
   console.log("");
   // eslint-disable-next-line no-console
-  console.log(
-    `  Health Score: ${colorScore(healthScore.overallScore, healthScore.overallGrade)}`,
-  );
+  console.log(`  Health Score: ${colorScore(healthScore.overallScore, healthScore.overallGrade)}`);
   // eslint-disable-next-line no-console
   console.log("");
 
@@ -59,9 +53,7 @@ export function printSummary(healthScore: HealthScore, diagnostics: DiagnosticRe
   // eslint-disable-next-line no-console
   console.log("");
   // eslint-disable-next-line no-console
-  console.log(
-    pc.dim("  Full diagnostic by MLDeep Systems → mldeep.systems/agentdoctor"),
-  );
+  console.log(pc.dim("  Full diagnostic by MLDeep Systems → mldeep.systems/agentdoctor"));
   // eslint-disable-next-line no-console
   console.log("");
 }

@@ -79,9 +79,7 @@ describe("Detection stability regression", () => {
       outputFormat: "json",
     });
 
-    const detected = new Set(
-      result.diagnostics.findings.map((f) => f.pathology),
-    );
+    const detected = new Set(result.diagnostics.findings.map((f) => f.pathology));
 
     // The multi-pathology fixture is designed to contain multiple pathology types
     expect(detected.size).toBeGreaterThanOrEqual(2);

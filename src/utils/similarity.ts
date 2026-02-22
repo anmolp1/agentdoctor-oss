@@ -26,9 +26,6 @@ export function jaccardSimilarity(a: Set<string>, b: Set<string>): number {
 }
 
 /** Compute input similarity between two tool call inputs. */
-export function inputSimilarity(
-  a: Record<string, unknown>,
-  b: Record<string, unknown>,
-): number {
+export function inputSimilarity(a: Record<string, unknown>, b: Record<string, unknown>): number {
   return jaccardSimilarity(flattenDict(a), flattenDict(b));
 }
